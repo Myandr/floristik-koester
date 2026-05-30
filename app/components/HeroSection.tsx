@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { BlurTextEffect } from "./BlurTextEffect";
 
@@ -14,13 +14,6 @@ export function HeroSection({
   const [scrolled, setScrolled] = useState(false);
   const [menuOrigin, setMenuOrigin] = useState("24px 38px");
   const menuBtnRef = useRef<HTMLButtonElement>(null);
-  const ctaRef = useRef<HTMLAnchorElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-  const [arrowVisible, setArrowVisible] = useState(true);
-  const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
-  const mousePosRef = useRef<{ x: number | null; y: number | null }>({ x: null, y: null });
-  const rafRef = useRef<number>(0);
 
   const openMenu = () => {
     if (menuBtnRef.current) {
@@ -41,107 +34,8 @@ export function HeroSection({
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  // Arrow drawing
-  const drawArrow = useCallback(() => {
-    const canvas = canvasRef.current;
-    const ctx = ctxRef.current;
-    const target = ctaRef.current;
-    const mouse = mousePosRef.current;
-    if (!canvas || !ctx || !target || mouse.x === null || mouse.y === null) return;
-
-    const rect = target.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    const x0 = mouse.x;
-    const y0 = mouse.y;
-
-    const a = Math.atan2(cy - y0, cx - x0);
-    const x1 = cx - Math.cos(a) * (rect.width / 2 + 12);
-    const y1 = cy - Math.sin(a) * (rect.height / 2 + 12);
-
-    const midX = (x0 + x1) / 2;
-    const midY = (y0 + y1) / 2;
-    const offset = Math.min(200, Math.hypot(x1 - x0, y1 - y0) * 0.5);
-    const t = Math.max(-1, Math.min(1, (y0 - y1) / 200));
-    const controlX = midX;
-    const controlY = midY + offset * t;
-
-    const dist = Math.hypot(x1 - x0, y1 - y0);
-    const opacity = Math.min(0.7, (dist - Math.max(rect.width, rect.height) / 2) / 500);
-    if (opacity <= 0) return;
-
-    ctx.strokeStyle = `rgba(196, 84, 90, ${opacity})`;
-    ctx.lineWidth = 1.5;
-
-    ctx.save();
-    ctx.beginPath();
-    ctx.moveTo(x0, y0);
-    ctx.quadraticCurveTo(controlX, controlY, x1, y1);
-    ctx.setLineDash([8, 5]);
-    ctx.stroke();
-    ctx.restore();
-
-    const angle = Math.atan2(y1 - controlY, x1 - controlX);
-    const headLen = 10;
-    ctx.beginPath();
-    ctx.setLineDash([]);
-    ctx.moveTo(x1, y1);
-    ctx.lineTo(x1 - headLen * Math.cos(angle - Math.PI / 6), y1 - headLen * Math.sin(angle - Math.PI / 6));
-    ctx.moveTo(x1, y1);
-    ctx.lineTo(x1 - headLen * Math.cos(angle + Math.PI / 6), y1 - headLen * Math.sin(angle + Math.PI / 6));
-    ctx.stroke();
-  }, []);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-    const onEnter = () => setArrowVisible(true);
-    const onLeave = () => setArrowVisible(false);
-    section.addEventListener("mouseenter", onEnter);
-    section.addEventListener("mouseleave", onLeave);
-    return () => {
-      section.removeEventListener("mouseenter", onEnter);
-      section.removeEventListener("mouseleave", onLeave);
-    };
-  }, []);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    ctxRef.current = canvas.getContext("2d");
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    const onMouseMove = (e: MouseEvent) => {
-      mousePosRef.current = { x: e.clientX, y: e.clientY };
-    };
-
-    window.addEventListener("resize", resize);
-    window.addEventListener("mousemove", onMouseMove);
-    resize();
-
-    const loop = () => {
-      const ctx = ctxRef.current;
-      if (ctx && canvas) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawArrow();
-      }
-      rafRef.current = requestAnimationFrame(loop);
-    };
-    loop();
-
-    return () => {
-      window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", onMouseMove);
-      cancelAnimationFrame(rafRef.current);
-    };
-  }, [drawArrow]);
-
   return (
     <section
-      ref={sectionRef}
       className="relative overflow-hidden"
       style={{ height: "100svh", minHeight: "680px" }}
     >
@@ -248,9 +142,9 @@ export function HeroSection({
         </p>
       </div>
 
-      {/* Bottom-left tagline */}
+      {/* Bottom-left tagline — hidden on mobile */}
       <div
-        className="absolute z-40 max-w-[280px]"
+        className="hidden sm:block absolute z-40 max-w-[280px]"
         style={{ bottom: "7%", left: "clamp(1.5rem, 4vw, 2.5rem)" }}
       >
         <p
@@ -265,7 +159,6 @@ export function HeroSection({
           Persönliche Handschrift
         </p>
         <p
-          className="hidden sm:block"
           style={{
             fontFamily: "var(--font-cormorant)",
             color: "#1B2B7A",
@@ -278,11 +171,10 @@ export function HeroSection({
         </p>
       </div>
 
-      {/* Bottom-right round CTA */}
+      {/* Bottom-right round CTA — outer rotates, inner text stays upright */}
       <a
-        ref={ctaRef}
         href="#kontakt"
-        className="absolute z-40 flex items-center justify-center text-center transition-transform hover:scale-105"
+        className="absolute z-40 flex items-center justify-center text-center"
         style={{
           bottom: "5%",
           right: "clamp(1.5rem, 4vw, 2.5rem)",
@@ -292,6 +184,7 @@ export function HeroSection({
           background: "#C4545A",
           color: "#FAF4EE",
           textDecoration: "none",
+          animation: "hero-btn-spin 9s linear infinite",
         }}
       >
         <span
@@ -303,24 +196,14 @@ export function HeroSection({
             lineHeight: 1.65,
             display: "block",
             padding: "0 18px",
+            animation: "hero-btn-spin-reverse 9s linear infinite",
           }}
         >
           Strauß<br />Bestellen
         </span>
       </a>
 
-      {/* Cursor arrow canvas */}
-      <canvas
-        ref={canvasRef}
-        className="fixed inset-0 pointer-events-none"
-        style={{
-          zIndex: 30,
-          opacity: arrowVisible ? 1 : 0,
-          transition: "opacity 0.8s ease",
-        }}
-      />
-
-      {/* Menu overlay — fixed, reveals from menu button */}
+      {/* Menu overlay */}
       <div
         aria-hidden={!menuOpen}
         style={{
@@ -384,7 +267,7 @@ export function HeroSection({
             { label: "Business Flowers", href: "/business-flowers" },
             { label: "Blumen-Abo", href: "/blumen-abo" },
             { label: "Unser Team", href: "/unser-team" },
-            { label: "Kontakt & Oeffnungszeiten", href: "/kontakt" },
+            { label: "Kontakt & Öffnungszeiten", href: "/kontakt" },
           ].map((item, i) => (
             <a
               key={item.label}
