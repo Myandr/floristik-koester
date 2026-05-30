@@ -142,16 +142,16 @@ export function HeroSection({
         </p>
       </div>
 
-      {/* Bottom-left tagline — hidden on mobile */}
+      {/* Bottom-left tagline */}
       <div
-        className="hidden sm:block absolute z-40 max-w-[280px]"
+        className="absolute z-40 max-w-[240px] sm:max-w-[280px]"
         style={{ bottom: "7%", left: "clamp(1.5rem, 4vw, 2.5rem)" }}
       >
         <p
           style={{
             fontFamily: "var(--font-great-vibes)",
             color: "#C4545A",
-            fontSize: "clamp(1.8rem, 3.8vw, 2.6rem)",
+            fontSize: "clamp(1.2rem, 3.8vw, 2.6rem)",
             lineHeight: 1.25,
             marginBottom: "0.45rem",
           }}
@@ -159,6 +159,7 @@ export function HeroSection({
           Persönliche Handschrift
         </p>
         <p
+          className="hidden sm:block"
           style={{
             fontFamily: "var(--font-cormorant)",
             color: "#1B2B7A",
