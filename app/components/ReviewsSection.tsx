@@ -59,72 +59,45 @@ export function ReviewsSection() {
             </h2>
           </div>
 
-          {/* Bento grid */}
-          <div
-            className="grid gap-4"
-            style={{
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gridTemplateRows: "auto",
-            }}
-          >
-            {/* Card 0 — spans 2 columns */}
+          {/* Bento grid — mobile: 1 col, md+: 3 col */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div
-              className="rounded-2xl p-8 flex flex-col gap-4"
-              style={{
-                gridColumn: "span 2",
-                background: colors[0].bg,
-              }}
+              className="rounded-2xl p-6 md:p-8 flex flex-col gap-4 md:col-span-2"
+              style={{ background: colors[0].bg }}
             >
               <Stars />
-              <p style={{ fontFamily: "var(--font-cormorant)", color: colors[0].text, opacity: 0.85, fontSize: "1.3rem", lineHeight: 1.75, fontStyle: "italic" }}>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: colors[0].text, opacity: 0.85, fontSize: "1.2rem", lineHeight: 1.75, fontStyle: "italic" }}>
                 „{reviews[0].text}"
               </p>
             </div>
 
-            {/* Card 1 — 1 column */}
-            <div
-              className="rounded-2xl p-8 flex flex-col gap-4"
-              style={{ background: colors[1].bg }}
-            >
+            <div className="rounded-2xl p-6 md:p-8 flex flex-col gap-4" style={{ background: colors[1].bg }}>
               <Stars />
-              <p style={{ fontFamily: "var(--font-cormorant)", color: colors[1].text, opacity: 0.9, fontSize: "1.25rem", lineHeight: 1.75, fontStyle: "italic" }}>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: colors[1].text, opacity: 0.9, fontSize: "1.15rem", lineHeight: 1.75, fontStyle: "italic" }}>
                 „{reviews[1].text}"
               </p>
             </div>
 
-            {/* Card 2 — 1 column */}
-            <div
-              className="rounded-2xl p-8 flex flex-col gap-4"
-              style={{ background: colors[2].bg }}
-            >
+            <div className="rounded-2xl p-6 md:p-8 flex flex-col gap-4" style={{ background: colors[2].bg }}>
               <Stars />
-              <p style={{ fontFamily: "var(--font-cormorant)", color: colors[2].text, opacity: 0.85, fontSize: "1.25rem", lineHeight: 1.75, fontStyle: "italic" }}>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: colors[2].text, opacity: 0.85, fontSize: "1.15rem", lineHeight: 1.75, fontStyle: "italic" }}>
                 „{reviews[2].text}"
               </p>
             </div>
 
-            {/* Card 3 — 1 column */}
-            <div
-              className="rounded-2xl p-8 flex flex-col gap-4"
-              style={{ background: colors[3].bg }}
-            >
+            <div className="rounded-2xl p-6 md:p-8 flex flex-col gap-4" style={{ background: colors[3].bg }}>
               <Stars />
-              <p style={{ fontFamily: "var(--font-cormorant)", color: colors[3].text, opacity: 0.9, fontSize: "1.25rem", lineHeight: 1.75, fontStyle: "italic" }}>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: colors[3].text, opacity: 0.9, fontSize: "1.15rem", lineHeight: 1.75, fontStyle: "italic" }}>
                 „{reviews[3].text}"
               </p>
             </div>
 
-            {/* Card 4 — 1 column */}
-            <div
-              className="rounded-2xl p-8 flex flex-col gap-4"
-              style={{ background: colors[4].bg }}
-            >
+            <div className="rounded-2xl p-6 md:p-8 flex flex-col gap-4" style={{ background: colors[4].bg }}>
               <Stars />
-              <p style={{ fontFamily: "var(--font-cormorant)", color: colors[4].text, opacity: 0.85, fontSize: "1.25rem", lineHeight: 1.75, fontStyle: "italic" }}>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: colors[4].text, opacity: 0.85, fontSize: "1.15rem", lineHeight: 1.75, fontStyle: "italic" }}>
                 „{reviews[4].text}"
               </p>
             </div>
-
           </div>
 
           <div className="flex flex-col items-center gap-4 mt-12">

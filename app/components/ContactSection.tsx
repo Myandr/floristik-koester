@@ -103,7 +103,6 @@ export function ContactSection() {
               letterSpacing: "-0.01em",
               lineHeight: 1.08,
               maxWidth: "600px",
-              whiteSpace: "nowrap",
             }}
           >
             <BlurTextEffect>Kontakt & Bestellung</BlurTextEffect>

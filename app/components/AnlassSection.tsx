@@ -49,7 +49,7 @@ export function AnlassSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
           <div
-            className="rounded-2xl p-12 flex flex-col justify-center gap-6"
+            className="rounded-2xl p-8 md:p-12 flex flex-col justify-center gap-6"
             style={{ background: "#1B2B7A", minHeight: "420px" }}
           >
             <p style={{ fontFamily: "var(--font-great-vibes)", color: "#F4C2C9", fontSize: "2rem", lineHeight: 1.2 }}>
@@ -75,7 +75,7 @@ export function AnlassSection() {
           </div>
 
           <div
-            className="rounded-2xl p-12 flex flex-col justify-center gap-6"
+            className="rounded-2xl p-8 md:p-12 flex flex-col justify-center gap-6"
             style={{ background: "#1B2B7A", minHeight: "420px" }}
           >
             <p style={{ fontFamily: "var(--font-great-vibes)", color: "#F4C2C9", fontSize: "2rem", lineHeight: 1.2 }}>

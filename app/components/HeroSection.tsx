@@ -286,8 +286,8 @@ export function HeroSection({
         style={{
           bottom: "5%",
           right: "clamp(1.5rem, 4vw, 2.5rem)",
-          width: "clamp(160px, 18vw, 210px)",
-          height: "clamp(160px, 18vw, 210px)",
+          width: "clamp(120px, 18vw, 210px)",
+          height: "clamp(120px, 18vw, 210px)",
           borderRadius: "62% 38% 54% 46% / 44% 58% 42% 56%",
           background: "#C4545A",
           color: "#FAF4EE",
@@ -335,7 +335,9 @@ export function HeroSection({
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "flex-start",
-          padding: "clamp(2rem, 8vw, 6rem)",
+          padding: "clamp(1.5rem, 8vw, 6rem)",
+          paddingTop: "5rem",
+          overflowY: "auto",
           pointerEvents: menuOpen ? "auto" : "none",
         }}
       >
@@ -391,7 +393,7 @@ export function HeroSection({
               style={{
                 fontFamily: "var(--font-cormorant)",
                 color: "#1B2B7A",
-                fontSize: "clamp(1.8rem, 5vw, 3.2rem)",
+                fontSize: "clamp(1.6rem, 5vw, 3.2rem)",
                 fontWeight: 600,
                 textDecoration: "none",
                 lineHeight: 1.15,

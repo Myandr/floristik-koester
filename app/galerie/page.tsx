@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { SubPageNav } from "../components/SubPageNav";
 
 const images = [
@@ -73,67 +72,74 @@ export default function Galerie() {
       </div>
 
       {/* Masonry grid */}
-      <div className="px-6 md:px-10 lg:px-16 py-16 md:py-20" style={{ background: "#FAF4EE" }}>
-        <div
-          className="max-w-6xl mx-auto"
-          style={{
-            columns: "2",
-            columnGap: "1rem",
-          }}
-        >
-          <style>{`
-            @media (min-width: 768px) { .gallery-grid { columns: 3 !important; } }
-            @media (min-width: 1024px) { .gallery-grid { columns: 4 !important; } }
-          `}</style>
-          <div
-            className="gallery-grid"
-            style={{ columns: 2, columnGap: "0.75rem" }}
-          >
-            {images.map((img, i) => (
+      <div className="px-4 md:px-8 lg:px-12 py-12 md:py-16" style={{ background: "#FAF4EE" }}>
+        <style>{`
+          .masonry {
+            columns: 2;
+            column-gap: 0.75rem;
+          }
+          @media (min-width: 768px) {
+            .masonry { columns: 3; column-gap: 1rem; }
+          }
+          @media (min-width: 1200px) {
+            .masonry { columns: 4; column-gap: 1rem; }
+          }
+          .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 0.75rem;
+            display: block;
+          }
+          @media (min-width: 768px) {
+            .masonry-item { margin-bottom: 1rem; }
+          }
+        `}</style>
+
+        <div className="masonry max-w-7xl mx-auto">
+          {images.map((img, i) => (
+            <div
+              key={i}
+              className="masonry-item group cursor-pointer relative overflow-hidden rounded-xl"
+              onClick={() => setLightbox(img.src)}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={img.src}
+                alt={img.alt}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  transition: "transform 0.5s ease",
+                }}
+                className="group-hover:scale-105"
+                loading="lazy"
+              />
               <div
-                key={i}
-                className="relative overflow-hidden rounded-xl mb-3 cursor-pointer group"
-                style={{ breakInside: "avoid" }}
-                onClick={() => setLightbox(img.src)}
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                style={{ background: "rgba(27,43,122,0.4)" }}
               >
-                <div style={{ position: "relative", width: "100%", paddingBottom: i % 3 === 0 ? "130%" : i % 3 === 1 ? "100%" : "75%" }}>
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: "rgba(27,43,122,0.35)" }}
-                  />
-                  <div
-                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  >
-                    <span
-                      style={{
-                        fontFamily: "var(--font-cormorant)",
-                        color: "#FAF4EE",
-                        fontSize: "0.7rem",
-                        letterSpacing: "0.25em",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      Vergrossern
-                    </span>
-                  </div>
-                </div>
+                <span
+                  style={{
+                    fontFamily: "var(--font-cormorant)",
+                    color: "#FAF4EE",
+                    fontSize: "0.72rem",
+                    letterSpacing: "0.25em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  &#x2B1C; ansehen
+                </span>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Lightbox */}
       {lightbox && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center"
-          style={{ background: "rgba(0,0,0,0.9)" }}
+          className="fixed inset-0 z-[100] flex items-center justify-center"
+          style={{ background: "rgba(0,0,0,0.92)" }}
           onClick={() => setLightbox(null)}
         >
           <button
@@ -145,19 +151,85 @@ export default function Galerie() {
               color: "#FAF4EE",
               background: "none",
               border: "none",
-              fontSize: "2rem",
+              fontSize: "2.5rem",
               cursor: "pointer",
               fontFamily: "var(--font-cormorant)",
               lineHeight: 1,
+              opacity: 0.8,
             }}
           >
             &times;
           </button>
+          {/* prev / next */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              const idx = images.findIndex((img) => img.src === lightbox);
+              setLightbox(images[(idx - 1 + images.length) % images.length].src);
+            }}
+            style={{
+              position: "absolute",
+              left: "1.5rem",
+              top: "50%",
+              transform: "translateY(-50%)",
+              color: "#FAF4EE",
+              background: "rgba(255,255,255,0.1)",
+              border: "none",
+              borderRadius: "50%",
+              width: "48px",
+              height: "48px",
+              fontSize: "1.4rem",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            &#8592;
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              const idx = images.findIndex((img) => img.src === lightbox);
+              setLightbox(images[(idx + 1) % images.length].src);
+            }}
+            style={{
+              position: "absolute",
+              right: "1.5rem",
+              top: "50%",
+              transform: "translateY(-50%)",
+              color: "#FAF4EE",
+              background: "rgba(255,255,255,0.1)",
+              border: "none",
+              borderRadius: "50%",
+              width: "48px",
+              height: "48px",
+              fontSize: "1.4rem",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            &#8594;
+          </button>
+
           <div
-            style={{ position: "relative", maxWidth: "90vw", maxHeight: "90vh", width: "800px", height: "600px" }}
+            style={{ maxWidth: "90vw", maxHeight: "90vh" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <Image src={lightbox} alt="" fill className="object-contain" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={lightbox}
+              alt=""
+              style={{
+                maxWidth: "90vw",
+                maxHeight: "90vh",
+                objectFit: "contain",
+                borderRadius: "12px",
+                display: "block",
+              }}
+            />
           </div>
         </div>
       )}
