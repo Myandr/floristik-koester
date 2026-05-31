@@ -45,7 +45,9 @@ export function SubPageNav() {
       </a>
 
       <a
-        href="/#kontakt"
+        href="https://floristik-koester.lokalerflorist.de"
+        target="_blank"
+        rel="noopener noreferrer"
         style={{
           fontFamily: "var(--font-cormorant)",
           color: "#FAF4EE",

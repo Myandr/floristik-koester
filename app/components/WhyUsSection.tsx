@@ -8,7 +8,7 @@ const cards = [
     tag: "Bestellung",
     detail: "WhatsApp & Telefon",
     title: "Schnell & unkompliziert bestellen",
-    href: "https://wa.me/491774878890",
+    href: "https://floristik-koester.lokalerflorist.de",
   },
   {
     image: "/images/blume4.jpg",
@@ -76,7 +76,7 @@ export function WhyUsSection() {
             </p>
 
             <a
-              href="https://wa.me/491774878890"
+              href="https://floristik-koester.lokalerflorist.de"
               target="_blank"
               rel="noopener noreferrer"
               className="self-start transition-all hover:opacity-80"

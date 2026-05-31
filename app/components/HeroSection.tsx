@@ -89,7 +89,9 @@ export function HeroSection({
         </div>
 
         <a
-          href="#kontakt"
+          href="https://floristik-koester.lokalerflorist.de"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden sm:flex items-center px-5 py-2 rounded-full border transition-all text-[#1B2B7A] hover:bg-[#1B2B7A] hover:text-white"
           style={{
             borderColor: "#1B2B7A",
@@ -174,7 +176,9 @@ export function HeroSection({
 
       {/* Bottom-right round CTA — outer rotates, inner text stays upright */}
       <a
-        href="#kontakt"
+        href="https://floristik-koester.lokalerflorist.de"
+        target="_blank"
+        rel="noopener noreferrer"
         className="absolute z-40 flex items-center justify-center text-center"
         style={{
           bottom: "5%",
@@ -294,7 +298,9 @@ export function HeroSection({
         </nav>
 
         <a
-          href="#kontakt"
+          href="https://floristik-koester.lokalerflorist.de"
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={() => setMenuOpen(false)}
           style={{
             marginTop: "2.5rem",

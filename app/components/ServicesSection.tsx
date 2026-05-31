@@ -129,7 +129,9 @@ export function ServicesSection() {
 
         <div className="mt-14 flex justify-center">
           <a
-            href="#kontakt"
+            href="https://floristik-koester.lokalerflorist.de"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               fontFamily: "var(--font-cormorant)",
               color: "#FAF4EE",

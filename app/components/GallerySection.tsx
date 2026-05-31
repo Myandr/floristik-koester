@@ -100,7 +100,9 @@ export function GallerySection() {
 
       <div className="flex justify-center mt-14">
         <a
-          href="#kontakt"
+          href="https://floristik-koester.lokalerflorist.de"
+          target="_blank"
+          rel="noopener noreferrer"
           className="transition-all hover:bg-[#FAF4EE] hover:text-[#1B2B7A]"
           style={{
             fontFamily: "var(--font-cormorant)",

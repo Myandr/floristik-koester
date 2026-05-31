@@ -102,7 +102,9 @@ export function ReviewsSection() {
 
           <div className="flex flex-col items-center gap-4 mt-12">
             <a
-              href="#kontakt"
+              href="https://floristik-koester.lokalerflorist.de"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 fontFamily: "var(--font-cormorant)",
                 color: "#FAF4EE",

@@ -74,7 +74,9 @@ export function AboutSection() {
             Herzblut. Kurzfristige Bestellungen sind oft möglich.
           </p>
           <a
-            href="#kontakt"
+            href="https://floristik-koester.lokalerflorist.de"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               fontFamily: "var(--font-cormorant)",
               color: "#1B2B7A",
