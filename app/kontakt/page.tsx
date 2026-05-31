@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SubPageNav } from "../components/SubPageNav";
+import { SiteNav } from "../components/SiteNav";
 
 const hours = [
   { day: "Montag", time: "08:00 - 18:00 Uhr" },
@@ -15,7 +15,7 @@ const hours = [
 
 const contacts = [
   { script: "Anrufen", label: "TELEFON", value: "02362 9993954", href: "tel:023629993954", cta: "Jetzt anrufen" },
-  { script: "WhatsApp", label: "DIREKT BESTELLEN", value: "0177 4878890", href: "https://wa.me/491774878890", cta: "Schreiben Sie uns" },
+  { script: "WhatsApp", label: "DIREKT BESTELLEN", value: "0177 4878890", href: "https://floristik-koester.lokalerflorist.de", cta: "Schreiben Sie uns" },
   { script: "Besuchen", label: "ADRESSE", value: "Lippestrasse, Dorsten", href: "https://maps.google.com/?q=Lippestrasse+Dorsten", cta: "Route planen" },
   { script: "E-Mail", label: "EMAIL", value: "info@floristik-koester.de", href: "mailto:info@floristik-koester.de", cta: "E-Mail senden" },
 ];
@@ -56,7 +56,7 @@ export default function Kontakt() {
 
   return (
     <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#ffffff" }}>
-      <SubPageNav />
+      <SiteNav />
 
       {/* Hero */}
       <div

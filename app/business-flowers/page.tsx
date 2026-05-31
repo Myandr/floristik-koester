@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SubPageNav } from "../components/SubPageNav";
+import { SiteNav } from "../components/SiteNav";
 
 const packages = [
   {
@@ -35,7 +35,7 @@ const benefits = [
 export default function BusinessFlowers() {
   return (
     <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#ffffff" }}>
-      <SubPageNav />
+      <SiteNav />
 
       {/* Hero */}
       <div className="relative overflow-hidden" style={{ minHeight: "520px" }}>
@@ -91,7 +91,9 @@ export default function BusinessFlowers() {
           </p>
           <div className="flex gap-4 mt-8 flex-wrap">
             <a
-              href="mailto:info@floristik-koester.de"
+              href="https://floristik-koester.lokalerflorist.de"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 fontFamily: "var(--font-cormorant)",
                 color: "#1B2B7A",
@@ -210,7 +212,9 @@ export default function BusinessFlowers() {
           Wir erstellen Ihnen ein individuelles Angebot, kostenlos und ohne Verpflichtung.
         </p>
         <a
-          href="mailto:info@floristik-koester.de"
+          href="https://floristik-koester.lokalerflorist.de"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             fontFamily: "var(--font-cormorant)",
             color: "#1B2B7A",

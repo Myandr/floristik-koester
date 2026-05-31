@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SubPageNav } from "../components/SubPageNav";
+import { SiteNav } from "../components/SiteNav";
 
 const images = [
   { src: "/images/blume1.jpg", alt: "Blumenstrauss" },
@@ -25,7 +25,7 @@ export default function Galerie() {
 
   return (
     <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#ffffff" }}>
-      <SubPageNav />
+      <SiteNav />
 
       {/* Hero */}
       <div
@@ -243,7 +243,7 @@ export default function Galerie() {
           Bestellen Sie Ihren eigenen Strauss
         </h2>
         <a
-          href="https://wa.me/491774878890"
+          href="https://floristik-koester.lokalerflorist.de"
           target="_blank"
           rel="noopener noreferrer"
           style={{

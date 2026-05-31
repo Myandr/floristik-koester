@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { HeroSection } from "./components/HeroSection";
 import { AnlassSection } from "./components/AnlassSection";
 import { WhyUsSection } from "./components/WhyUsSection";
@@ -9,13 +8,13 @@ import { SocialSection } from "./components/SocialSection";
 import { ContactSection } from "./components/ContactSection";
 import { SiteFooter } from "./components/SiteFooter";
 import { FadeIn } from "./components/FadeIn";
+import { SiteNav } from "./components/SiteNav";
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <main style={{ fontFamily: "var(--font-cormorant, serif)" }}>
-      <HeroSection menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <SiteNav transparent />
+      <HeroSection />
       <FadeIn><AnlassSection /></FadeIn>
       <FadeIn delay={50}><WhyUsSection /></FadeIn>
       <FadeIn delay={50}><ReviewsSection /></FadeIn>

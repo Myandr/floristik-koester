@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SubPageNav } from "../components/SubPageNav";
+import { SiteNav } from "../components/SiteNav";
 
 const plans = [
   {
@@ -47,7 +47,7 @@ const faqs = [
 export default function BlumenAbo() {
   return (
     <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#ffffff" }}>
-      <SubPageNav />
+      <SiteNav />
 
       {/* Hero */}
       <div className="relative overflow-hidden" style={{ minHeight: "520px" }}>
@@ -103,7 +103,7 @@ export default function BlumenAbo() {
           </p>
           <div className="flex gap-4 mt-8 flex-wrap">
             <a
-              href="https://wa.me/491774878890"
+              href="https://floristik-koester.lokalerflorist.de"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -181,7 +181,7 @@ export default function BlumenAbo() {
                   {p.desc}
                 </p>
                 <a
-                  href="https://wa.me/491774878890"
+                  href="https://floristik-koester.lokalerflorist.de"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -225,7 +225,7 @@ export default function BlumenAbo() {
               Wir gestalten auf Wunsch eine persoenliche Geschenkkarte und kuemmern uns um alles Weitere.
             </p>
             <a
-              href="https://wa.me/491774878890"
+              href="https://floristik-koester.lokalerflorist.de"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -289,7 +289,7 @@ export default function BlumenAbo() {
         </h2>
         <div className="flex gap-4 justify-center flex-wrap">
           <a
-            href="https://wa.me/491774878890"
+            href="https://floristik-koester.lokalerflorist.de"
             target="_blank"
             rel="noopener noreferrer"
             style={{

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SubPageNav } from "../components/SubPageNav";
+import { SiteNav } from "../components/SiteNav";
 
 const values = [
   {
@@ -29,7 +29,7 @@ const facts = [
 export default function UnserTeam() {
   return (
     <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#ffffff" }}>
-      <SubPageNav />
+      <SiteNav />
 
       {/* Hero */}
       <div className="relative overflow-hidden" style={{ minHeight: "520px" }}>

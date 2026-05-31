@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SubPageNav } from "../components/SubPageNav";
+import { SiteNav } from "../components/SiteNav";
 
 const steps = [
   {
@@ -31,7 +31,7 @@ const occasions = [
 export default function ExpressBlumen() {
   return (
     <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#ffffff" }}>
-      <SubPageNav />
+      <SiteNav />
 
       {/* Hero */}
       <div className="relative overflow-hidden" style={{ minHeight: "520px" }}>
@@ -87,7 +87,7 @@ export default function ExpressBlumen() {
           </p>
           <div className="flex gap-4 mt-8 flex-wrap">
             <a
-              href="https://wa.me/491774878890"
+              href="https://floristik-koester.lokalerflorist.de"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -222,7 +222,7 @@ export default function ExpressBlumen() {
         </h2>
         <div className="flex gap-4 justify-center flex-wrap">
           <a
-            href="https://wa.me/491774878890"
+            href="https://floristik-koester.lokalerflorist.de"
             target="_blank"
             rel="noopener noreferrer"
             style={{
