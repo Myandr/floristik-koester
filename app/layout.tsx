@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Great_Vibes } from "next/font/google";
 import "./globals.css";
+import { CookieBanner } from "./components/CookieBanner";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -32,7 +33,10 @@ export default function RootLayout({
       lang="de"
       className={`${cormorant.variable} ${greatVibes.variable} antialiased`}
     >
-      <body className="overflow-x-hidden bg-white">{children}</body>
+      <body className="overflow-x-hidden bg-white">
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   );
 }

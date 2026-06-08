@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SiteNav } from "../components/SiteNav";
 
 const hours = [
@@ -23,36 +23,64 @@ const contacts = [
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function Kontakt() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", datenschutz: false });
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [mapsConsent, setMapsConsent] = useState(false);
 
-  function update(field: keyof typeof form) {
+  useEffect(() => {
+    const consent = localStorage.getItem("cookie-consent");
+    setMapsConsent(consent === "all");
+
+    function onConsentUpdate() {
+      setMapsConsent(localStorage.getItem("cookie-consent") === "all");
+    }
+    window.addEventListener("cookie-consent-updated", onConsentUpdate);
+    return () => window.removeEventListener("cookie-consent-updated", onConsentUpdate);
+  }, []);
+
+  function update(field: keyof Omit<typeof form, "datenschutz">) {
     return (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((f) => ({ ...f, [field]: e.target.value }));
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!form.datenschutz) {
+      setErrorMsg("Bitte stimmen Sie der Datenschutzerklärung zu.");
+      setStatus("error");
+      return;
+    }
     setStatus("loading");
     setErrorMsg("");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ name: form.name, email: form.email, subject: form.subject, message: form.message }),
       });
       if (!res.ok) {
         const data = await res.json();
         throw new Error(data.error ?? "Unbekannter Fehler");
       }
       setStatus("success");
-      setForm({ name: "", email: "", subject: "", message: "" });
+      setForm({ name: "", email: "", subject: "", message: "", datenschutz: false });
     } catch (err: unknown) {
       setErrorMsg(err instanceof Error ? err.message : "Fehler beim Senden.");
       setStatus("error");
     }
   }
+
+  const inputStyle = {
+    background: "rgba(255,255,255,0.07)",
+    border: "1.5px solid rgba(255,255,255,0.15)",
+    borderRadius: "10px",
+    padding: "0.75rem 1rem",
+    color: "#FAF4EE",
+    fontFamily: "var(--font-cormorant)",
+    fontSize: "1rem",
+    outline: "none",
+  };
 
   return (
     <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#ffffff" }}>
@@ -85,7 +113,7 @@ export default function Kontakt() {
               lineHeight: 1.1,
             }}
           >
-            Geschaeftszeiten &amp; Kontakt
+            Geschäftszeiten &amp; Kontakt
           </h1>
           <p
             style={{
@@ -98,7 +126,7 @@ export default function Kontakt() {
               maxWidth: "480px",
             }}
           >
-            Rufen Sie an, schreiben Sie uns per WhatsApp oder kommen Sie einfach vorbei. Wir sind fuer Sie da.
+            Rufen Sie an, schreiben Sie uns per WhatsApp oder kommen Sie einfach vorbei. Wir sind für Sie da.
           </p>
         </div>
       </div>
@@ -146,7 +174,7 @@ export default function Kontakt() {
               wann wir offen haben
             </p>
             <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(2rem, 3.5vw, 2.8rem)", fontWeight: 600, letterSpacing: "-0.01em", marginBottom: "2rem" }}>
-              Oeffnungszeiten
+              Öffnungszeiten
             </h2>
             <div className="flex flex-col">
               {hours.map((h, i) => {
@@ -161,7 +189,6 @@ export default function Kontakt() {
                       paddingLeft: isToday ? "0.8rem" : "0",
                       paddingRight: isToday ? "0.8rem" : "0",
                       borderRadius: isToday ? "8px" : "0",
-                      marginBottom: isToday ? "0" : "0",
                     }}
                   >
                     <span
@@ -183,7 +210,7 @@ export default function Kontakt() {
                     <span
                       style={{
                         fontFamily: "var(--font-cormorant)",
-                        color: h.time === "geschlossen" ? "#1B2B7A" : "#1B2B7A",
+                        color: "#1B2B7A",
                         fontSize: "1.05rem",
                         opacity: h.time === "geschlossen" ? 0.35 : 0.75,
                         fontWeight: isToday ? 600 : 400,
@@ -198,25 +225,61 @@ export default function Kontakt() {
             <div className="mt-8 rounded-2xl p-6 flex flex-col gap-2" style={{ background: "#FDF0F2" }}>
               <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "1.4rem" }}>Hinweis</p>
               <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.7, fontSize: "0.95rem", lineHeight: 1.8 }}>
-                An Feiertagen koennen die Oeffnungszeiten abweichen. Bitte ruf kurz an oder schreib uns per WhatsApp, um sicherzugehen.
+                An Feiertagen können die Öffnungszeiten abweichen. Bitte ruf kurz an oder schreib uns per WhatsApp, um sicherzugehen.
               </p>
             </div>
           </div>
 
           {/* Map + form */}
           <div className="flex flex-col gap-6">
-            {/* Map */}
-            <div style={{ borderRadius: "20px", overflow: "hidden", height: "280px", border: "1.5px solid rgba(27,43,122,0.1)" }}>
-              <iframe
-                src="https://maps.google.com/maps?q=Lippestrasse+Dorsten+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0, display: "block" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Floristik Koester Standort"
-              />
+            {/* Map with consent gate */}
+            <div
+              style={{
+                borderRadius: "20px",
+                overflow: "hidden",
+                height: "280px",
+                border: "1.5px solid rgba(27,43,122,0.1)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "#FDF0F2",
+              }}
+            >
+              {mapsConsent ? (
+                <iframe
+                  src="https://maps.google.com/maps?q=Lippestrasse+Dorsten+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, display: "block" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Floristik Köster Standort"
+                />
+              ) : (
+                <div style={{ textAlign: "center", padding: "2rem" }}>
+                  <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "1.6rem", marginBottom: "0.5rem" }}>
+                    Standort
+                  </p>
+                  <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.65, fontSize: "0.95rem", lineHeight: 1.75, marginBottom: "1rem", maxWidth: "280px" }}>
+                    Google Maps setzt Cookies. Bitte stimmen Sie über den Cookie-Banner zu, um die Karte zu laden.
+                  </p>
+                  <a
+                    href="https://maps.google.com/?q=Lippestrasse+Dorsten"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      fontFamily: "var(--font-cormorant)",
+                      color: "#C4545A",
+                      fontSize: "0.9rem",
+                      letterSpacing: "0.08em",
+                      textDecoration: "underline",
+                    }}
+                  >
+                    In Google Maps öffnen →
+                  </a>
+                </div>
+              )}
             </div>
 
             {/* Contact form */}
@@ -249,16 +312,7 @@ export default function Kontakt() {
                       placeholder={f.placeholder}
                       value={form[f.field]}
                       onChange={update(f.field)}
-                      style={{
-                        background: "rgba(255,255,255,0.07)",
-                        border: "1.5px solid rgba(255,255,255,0.15)",
-                        borderRadius: "10px",
-                        padding: "0.75rem 1rem",
-                        color: "#FAF4EE",
-                        fontFamily: "var(--font-cormorant)",
-                        fontSize: "1rem",
-                        outline: "none",
-                      }}
+                      style={inputStyle}
                     />
                   </div>
                 ))}
@@ -272,16 +326,7 @@ export default function Kontakt() {
                   placeholder="z. B. Hochzeitsblumen, Bestellung..."
                   value={form.subject}
                   onChange={update("subject")}
-                  style={{
-                    background: "rgba(255,255,255,0.07)",
-                    border: "1.5px solid rgba(255,255,255,0.15)",
-                    borderRadius: "10px",
-                    padding: "0.75rem 1rem",
-                    color: "#FAF4EE",
-                    fontFamily: "var(--font-cormorant)",
-                    fontSize: "1rem",
-                    outline: "none",
-                  }}
+                  style={inputStyle}
                 />
               </div>
               <div className="flex flex-col gap-1">
@@ -294,19 +339,43 @@ export default function Kontakt() {
                   value={form.message}
                   onChange={update("message")}
                   required
-                  style={{
-                    background: "rgba(255,255,255,0.07)",
-                    border: "1.5px solid rgba(255,255,255,0.15)",
-                    borderRadius: "10px",
-                    padding: "0.75rem 1rem",
-                    color: "#FAF4EE",
-                    fontFamily: "var(--font-cormorant)",
-                    fontSize: "1rem",
-                    resize: "vertical",
-                    outline: "none",
-                  }}
+                  style={{ ...inputStyle, resize: "vertical" }}
                 />
               </div>
+
+              {/* Datenschutz-Checkbox */}
+              <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                <input
+                  type="checkbox"
+                  id="datenschutz"
+                  checked={form.datenschutz}
+                  onChange={(e) => setForm((f) => ({ ...f, datenschutz: e.target.checked }))}
+                  style={{ marginTop: "0.25rem", accentColor: "#F4C2C9", width: "16px", height: "16px", flexShrink: 0, cursor: "pointer" }}
+                />
+                <label
+                  htmlFor="datenschutz"
+                  style={{
+                    fontFamily: "var(--font-cormorant)",
+                    color: "#FAF4EE",
+                    opacity: 0.75,
+                    fontSize: "0.9rem",
+                    lineHeight: 1.7,
+                    cursor: "pointer",
+                  }}
+                >
+                  Ich habe die{" "}
+                  <a
+                    href="/datenschutz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "#F4C2C9", textDecoration: "underline" }}
+                  >
+                    Datenschutzerklärung
+                  </a>{" "}
+                  gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. *
+                </label>
+              </div>
+
               <button
                 type="submit"
                 disabled={status === "loading"}
@@ -345,7 +414,7 @@ export default function Kontakt() {
 
       <footer className="py-6 px-6 md:px-10 text-center" style={{ borderTop: "1px solid rgba(27,43,122,0.08)" }}>
         <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.35, fontSize: "0.72rem", letterSpacing: "0.1em" }}>
-          {new Date().getFullYear()} Floristik Koester &middot; Alle Rechte vorbehalten
+          {new Date().getFullYear()} Floristik Köster &middot; Alle Rechte vorbehalten
         </p>
       </footer>
     </main>
