@@ -98,6 +98,7 @@ export function ReviewsSection() {
                 „{reviews[4].text}"
               </p>
             </div>
+
           </div>
 
           <div className="flex flex-col items-center gap-4 mt-12">

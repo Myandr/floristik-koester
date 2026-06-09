@@ -85,7 +85,7 @@ export function AnlassSection() {
               Hochzeitsfloristik & Brautsträuße
             </h3>
             <p style={{ fontFamily: "var(--font-cormorant)", color: "#FAF4EE", opacity: 0.8, fontSize: "1.15rem", lineHeight: 1.8 }}>
-              Brautsträuße, Tischdekoration und florales Ambiente für Ihren schönsten Tag — mit Herz, Erfahrung und persönlicher Beratung.
+              Für den schönsten Tag Ihres Lebens gestalten wir atemberaubende Hochzeitsarrangements — Brautstrauß, Tischdekoration und florales Ambiente mit Herz und persönlicher Beratung.
             </p>
             <a href="https://floristik-koester.lokalerflorist.de" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-cormorant)", color: "#F4C2C9", fontSize: "0.8rem", letterSpacing: "0.18em", textTransform: "uppercase", textDecoration: "none" }}>
               Anfrage stellen →

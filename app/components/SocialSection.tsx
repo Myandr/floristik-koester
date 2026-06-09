@@ -3,13 +3,13 @@ import { BlurTextEffect } from "./BlurTextEffect";
 const socials = [
   {
     name: "Instagram",
-    href: "https://instagram.com/floristik.koester",
-    script: "@floristik.koester",
+    href: "https://instagram.com/floristikkoester",
+    script: "@floristikkoester",
   },
   {
     name: "Facebook",
-    href: "https://facebook.com/floristik.koester",
-    script: "Floristik Köster",
+    href: "https://facebook.com/FloristikKoester",
+    script: "FloristikKoester",
   },
   {
     name: "TikTok",

@@ -15,7 +15,7 @@ const cards = [
     alt: "Floristik Köster Qualität",
     tag: "Qualität",
     detail: "Seit 1999",
-    title: "Warum Floristik Köster die richtige Wahl ist",
+    title: "Frische Blumen in bester Qualität",
     href: "#kontakt",
   },
   {
@@ -72,7 +72,7 @@ export function WhyUsSection() {
                 maxWidth: "380px",
               }}
             >
-              Sie haben wenig Zeit oder möchten Blumen vorbestellen? Wir beraten Sie persönlich — mit Herzblut und langjähriger Erfahrung.
+              Sie haben wenig Zeit oder möchten Blumen vorbestellen? Schreiben Sie uns einfach per WhatsApp oder rufen Sie an — wir kümmern uns schnell und zuverlässig.
             </p>
 
             <a

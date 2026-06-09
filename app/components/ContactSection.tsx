@@ -35,8 +35,9 @@ const contactLinks = [
 ];
 
 const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com/floristik.koester", handle: "@floristik.koester" },
-  { label: "Facebook", href: "https://facebook.com/floristikkoester", handle: "Floristik Köster" },
+  { label: "Instagram", href: "https://instagram.com/floristikkoester", handle: "@floristikkoester" },
+  { label: "Facebook", href: "https://facebook.com/FloristikKoester", handle: "FloristikKoester" },
+  { label: "TikTok", href: "https://tiktok.com/@floristik.koester", handle: "@floristik.koester" },
 ];
 
 type Status = "idle" | "loading" | "success" | "error";

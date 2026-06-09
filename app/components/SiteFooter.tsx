@@ -91,8 +91,8 @@ export function SiteFooter() {
               {/* Social */}
               <div className="flex gap-3 mt-1">
                 {[
-                  { label: "Instagram", href: "https://instagram.com/floristik.koester" },
-                  { label: "Facebook", href: "https://facebook.com/floristikkoester" },
+                  { label: "Instagram", href: "https://instagram.com/floristikkoester" },
+                  { label: "Facebook", href: "https://facebook.com/FloristikKoester" },
                 ].map((s) => (
                   <a
                     key={s.label}
