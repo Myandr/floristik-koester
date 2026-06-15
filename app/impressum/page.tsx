@@ -87,7 +87,7 @@ export default function Impressum() {
         <div style={sectionStyle}>
           <h2 style={headingStyle}>Angaben gemäß § 5 DDG</h2>
           <p style={textStyle}>
-            {"Floristik Köster\nInhaber: [VORNAME NACHNAME]\nRechtsform: Einzelunternehmen\nLippestraße [NR]\n46282 Dorsten"}
+            {"Floristik Köster\nInhaber: [VORNAME NACHNAME]\nRechtsform: Einzelunternehmen\nLippestraße 18\n46282 Dorsten"}
           </p>
         </div>
 

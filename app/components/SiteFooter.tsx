@@ -168,7 +168,7 @@ export function SiteFooter() {
               <span style={labelStyle}>Kontakt</span>
               <div className="flex flex-col">
                 {[
-                  { value: "Lippestraße, Dorsten", href: "https://maps.google.com/?q=Lippestraße+Dorsten" },
+                  { value: "Lippestraße 18, 46282 Dorsten", href: "https://maps.google.com/?q=Lippestrasse+18+46282+Dorsten" },
                   { value: "02362 9993954", href: "tel:023629993954" },
                   { value: "0177 4878890 (WhatsApp)", href: "https://wa.me/491774878890" },
                   { value: "info@floristik-koester.de", href: "mailto:info@floristik-koester.de" },

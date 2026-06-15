@@ -75,7 +75,8 @@ const jsonLd = {
   telephone: "+4902362-9993954",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Lippestraße",
+    streetAddress: "Lippestraße 18",
+    postalCode: "46282",
     addressLocality: "Dorsten",
     addressCountry: "DE",
   },

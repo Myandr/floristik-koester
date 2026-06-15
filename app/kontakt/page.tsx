@@ -17,7 +17,7 @@ const hours = [
 const contacts = [
   { script: "Anrufen", label: "TELEFON", value: "02362 9993954", href: "tel:023629993954", cta: "Jetzt anrufen" },
   { script: "WhatsApp", label: "DIREKT BESTELLEN", value: "0177 4878890", href: "https://floristik-koester.lokalerflorist.de", cta: "Schreiben Sie uns" },
-  { script: "Besuchen", label: "ADRESSE", value: "Lippestraße, Dorsten", href: "https://maps.google.com/?q=Lippestrasse+Dorsten", cta: "Route planen" },
+  { script: "Besuchen", label: "ADRESSE", value: "Lippestraße 18, 46282 Dorsten", href: "https://maps.google.com/?q=Lippestrasse+18+46282+Dorsten", cta: "Route planen" },
   { script: "E-Mail", label: "EMAIL", value: "info@floristik-koester.de", href: "mailto:info@floristik-koester.de", cta: "E-Mail senden" },
 ];
 
@@ -248,7 +248,7 @@ export default function Kontakt() {
             >
               {mapsConsent ? (
                 <iframe
-                  src="https://maps.google.com/maps?q=Lippestrasse+Dorsten+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=Lippestrasse+18+46282+Dorsten+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0, display: "block" }}
@@ -266,7 +266,7 @@ export default function Kontakt() {
                     Google Maps setzt Cookies. Bitte stimmen Sie über den Cookie-Banner zu, um die Karte zu laden.
                   </p>
                   <a
-                    href="https://maps.google.com/?q=Lippestrasse+Dorsten"
+                    href="https://maps.google.com/?q=Lippestrasse+18+46282+Dorsten"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

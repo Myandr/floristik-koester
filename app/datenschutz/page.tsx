@@ -10,7 +10,7 @@ const sections = [
   {
     title: "2. Verantwortlicher",
     content:
-      "Floristik Köster\nInhaber: [VORNAME NACHNAME]\nLippestraße [NR]\n46282 Dorsten\n\nTelefon: 02362 9993954\nE-Mail: info@floristik-koester.de",
+      "Floristik Köster\nInhaber: [VORNAME NACHNAME]\nLippestraße 18\n46282 Dorsten\n\nTelefon: 02362 9993954\nE-Mail: info@floristik-koester.de",
   },
   {
     title: "3. Hosting",

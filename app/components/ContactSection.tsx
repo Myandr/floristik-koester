@@ -342,8 +342,8 @@ export function ContactSection() {
                 </ContactRow>
 
                 {/* Adresse */}
-                <ContactRow icon={<PinIcon />} label="Adresse" href="https://maps.google.com/?q=Lippestraße+Dorsten">
-                  <span>Lippestraße</span>
+                <ContactRow icon={<PinIcon />} label="Adresse" href="https://maps.google.com/?q=Lippestrasse+18+46282+Dorsten">
+                  <span>Lippestraße 18</span>
                   <span style={{ display: "block", opacity: 0.6, fontSize: "0.88rem" }}>46282 Dorsten</span>
                 </ContactRow>
 
@@ -411,7 +411,7 @@ export function ContactSection() {
 
             {/* Google Maps button */}
             <a
-              href="https://maps.google.com/?q=Lippestraße+Dorsten"
+              href="https://maps.google.com/?q=Lippestrasse+18+46282+Dorsten"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -451,7 +451,7 @@ export function ContactSection() {
           }}
         >
           <iframe
-            src="https://maps.google.com/maps?q=Lippestraße+Dorsten+46282&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=Lippestrasse+18+46282+Dorsten+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0, display: "block" }}

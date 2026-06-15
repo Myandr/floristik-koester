@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Wo kann ich die Blumen abholen?",
-    a: "In unserem Laden an der Lippestraße in Dorsten, während der regulären Öffnungszeiten.",
+    a: "In unserem Laden an der Lippestraße 18 in 46282 Dorsten, während der regulären Öffnungszeiten.",
   },
   {
     q: "Gibt es auch Lieferung?",
