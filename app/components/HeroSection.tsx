@@ -33,7 +33,7 @@ export function HeroSection() {
           style={{
             fontFamily: "var(--font-great-vibes)",
             color: "#1B2B7A",
-            fontSize: "clamp(5rem, 15vw, 13rem)",
+            fontSize: "clamp(4.5rem, 12vw, 10rem)",
             lineHeight: 1.15,
             textAlign: "center",
             textShadow: "0 2px 32px rgba(250,244,238,0.5)",
