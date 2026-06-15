@@ -1,19 +1,19 @@
 "use client";
 
 const navLinks = [
-  { label: "Floristik", href: "#anlass" },
-  { label: "Über uns", href: "#ueber-uns" },
-  { label: "Galerie", href: "#galerie" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Floristik", href: "/#anlass" },
+  { label: "Über uns", href: "/#ueber-uns" },
+  { label: "Galerie", href: "/galerie" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
 
 const services = [
-  "Blumensträuße",
-  "Hochzeitsfloristik",
-  "Trauerfloristik",
-  "Event & Tischdeko",
-  "Business Flowers",
-  "Blumen-Abos",
+  { label: "Blumensträuße", href: "https://floristik-koester.lokalerflorist.de" },
+  { label: "Hochzeitsfloristik", href: "/#anlass" },
+  { label: "Trauerfloristik", href: "/#anlass" },
+  { label: "Event & Tischdeko", href: "/business-flowers" },
+  { label: "Business Flowers", href: "/business-flowers" },
+  { label: "Blumen-Abos", href: "/blumen-abo" },
 ];
 
 const labelStyle: React.CSSProperties = {
@@ -147,17 +147,17 @@ export function SiteFooter() {
               <span style={labelStyle}>Leistungen</span>
               <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                 {services.map((s) => (
-                  <li
-                    key={s}
-                    style={{
-                      fontFamily: "var(--font-cormorant)",
-                      color: "#ffffff",
-                      fontSize: "1.45rem",
-                      opacity: 0.9,
-                      lineHeight: 2.0,
-                    }}
-                  >
-                    {s}
+                  <li key={s.label}>
+                    <a
+                      href={s.href}
+                      target={s.href.startsWith("http") ? "_blank" : undefined}
+                      rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      style={linkStyle}
+                      onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+                      onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.9")}
+                    >
+                      {s.label}
+                    </a>
                   </li>
                 ))}
               </ul>
