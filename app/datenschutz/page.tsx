@@ -1,4 +1,5 @@
 import { SubPageNav } from "../components/SubPageNav";
+import { SiteFooter } from "../components/SiteFooter";
 
 const sections = [
   {
@@ -55,7 +56,7 @@ export default function Datenschutz() {
 
       <div
         className="px-6 md:px-10 lg:px-16 py-20 md:py-28"
-        style={{ background: "linear-gradient(135deg, #FDF0F2 0%, #ffffff 60%)" }}
+        style={{ background: "#ffffff" }}
       >
         <div className="max-w-3xl mx-auto">
           <p
@@ -135,22 +136,7 @@ export default function Datenschutz() {
         </div>
       </div>
 
-      <footer
-        className="py-6 px-6 md:px-10 text-center mt-8"
-        style={{ borderTop: "1px solid rgba(27,43,122,0.08)" }}
-      >
-        <p
-          style={{
-            fontFamily: "var(--font-cormorant)",
-            color: "#1B2B7A",
-            opacity: 0.35,
-            fontSize: "0.72rem",
-            letterSpacing: "0.1em",
-          }}
-        >
-          {new Date().getFullYear()} Floristik Köster &middot; Alle Rechte vorbehalten
-        </p>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

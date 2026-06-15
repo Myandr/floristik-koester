@@ -50,7 +50,7 @@ export function GallerySection() {
   }, []);
 
   return (
-    <section className="py-24 md:py-32 overflow-hidden" style={{ background: "#1B2B7A" }}>
+    <section className="py-24 md:py-32 overflow-hidden" style={{ background: "#ffffff" }}>
       <style>{`
         .g-mask {
           mask: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
@@ -59,13 +59,13 @@ export function GallerySection() {
       `}</style>
 
       <div className="text-center px-6 mb-16">
-        <p style={{ fontFamily: "var(--font-great-vibes)", color: "#F4C2C9", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
+        <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
           unsere Momente
         </p>
-        <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#FAF4EE", fontSize: "clamp(2.2rem, 4.5vw, 3.4rem)", fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.1 }}>
+        <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(2.2rem, 4.5vw, 3.4rem)", fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.1 }}>
           Blicke in unser Atelier
         </h2>
-        <p style={{ fontFamily: "var(--font-cormorant)", color: "#FAF4EE", opacity: 0.55, fontSize: "1.05rem", lineHeight: 1.8, marginTop: "0.8rem" }}>
+        <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.5, fontSize: "1.05rem", lineHeight: 1.8, marginTop: "0.8rem" }}>
           Frisch, handgefertigt und mit Liebe zum Detail — täglich in Dorsten.
         </p>
       </div>

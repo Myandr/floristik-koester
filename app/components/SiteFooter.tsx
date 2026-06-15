@@ -1,3 +1,5 @@
+"use client";
+
 const navLinks = [
   { label: "Floristik", href: "#anlass" },
   { label: "Über uns", href: "#ueber-uns" },
@@ -16,22 +18,22 @@ const services = [
 
 const labelStyle: React.CSSProperties = {
   fontFamily: "var(--font-cormorant)",
-  color: "#F4C2C9",
-  fontSize: "0.65rem",
+  color: "#ffffff",
+  fontSize: "0.78rem",
   letterSpacing: "0.2em",
   textTransform: "uppercase",
-  opacity: 0.7,
-  marginBottom: "1rem",
+  opacity: 0.5,
+  marginBottom: "1.1rem",
   display: "block",
 };
 
 const linkStyle: React.CSSProperties = {
   fontFamily: "var(--font-cormorant)",
-  color: "#FAF4EE",
-  fontSize: "1rem",
-  opacity: 0.65,
+  color: "#ffffff",
+  fontSize: "1.45rem",
+  opacity: 0.9,
   textDecoration: "none",
-  lineHeight: 2.1,
+  lineHeight: 2.0,
   display: "block",
   transition: "opacity 0.2s",
 };
@@ -53,8 +55,8 @@ export function SiteFooter() {
                 <p
                   style={{
                     fontFamily: "var(--font-great-vibes)",
-                    color: "#F4C2C9",
-                    fontSize: "2.4rem",
+                    color: "#ffffff",
+                    fontSize: "3rem",
                     lineHeight: 1.15,
                   }}
                 >
@@ -63,26 +65,26 @@ export function SiteFooter() {
                 <p
                   style={{
                     fontFamily: "var(--font-cormorant)",
-                    color: "#FAF4EE",
-                    opacity: 0.35,
+                    color: "#ffffff",
+                    opacity: 0.5,
                     fontSize: "0.65rem",
                     letterSpacing: "0.18em",
                     textTransform: "uppercase",
                     marginTop: "0.35rem",
                   }}
                 >
-                  Dorsten · Seit 1999
+                  Dorsten
                 </p>
               </div>
 
               <p
                 style={{
                   fontFamily: "var(--font-cormorant)",
-                  color: "#FAF4EE",
-                  opacity: 0.55,
-                  fontSize: "1.05rem",
+                  color: "#ffffff",
+                  opacity: 0.8,
+                  fontSize: "1.2rem",
                   lineHeight: 1.85,
-                  maxWidth: "290px",
+                  maxWidth: "320px",
                 }}
               >
                 Vom Blütenglück zum Dekostück — handgefertigte Floristik mit Herzblut für jeden Anlass.
@@ -103,11 +105,11 @@ export function SiteFooter() {
                       fontFamily: "var(--font-cormorant)",
                       color: "#1B2B7A",
                       background: "#F4C2C9",
-                      fontSize: "0.68rem",
+                      fontSize: "0.8rem",
                       letterSpacing: "0.14em",
                       textTransform: "uppercase",
                       textDecoration: "none",
-                      padding: "0.5rem 1.2rem",
+                      padding: "0.6rem 1.4rem",
                       borderRadius: "999px",
                       fontWeight: 600,
                       opacity: 0.92,
@@ -132,7 +134,7 @@ export function SiteFooter() {
                     href={n.href}
                     style={linkStyle}
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-                    onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.65")}
+                    onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.9")}
                   >
                     {n.label}
                   </a>
@@ -149,10 +151,10 @@ export function SiteFooter() {
                     key={s}
                     style={{
                       fontFamily: "var(--font-cormorant)",
-                      color: "#FAF4EE",
-                      fontSize: "1rem",
-                      opacity: 0.55,
-                      lineHeight: 2.1,
+                      color: "#ffffff",
+                      fontSize: "1.45rem",
+                      opacity: 0.9,
+                      lineHeight: 2.0,
                     }}
                   >
                     {s}
@@ -178,7 +180,7 @@ export function SiteFooter() {
                     rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     style={linkStyle}
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-                    onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.65")}
+                    onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.9")}
                   >
                     {c.value}
                   </a>
@@ -188,26 +190,26 @@ export function SiteFooter() {
               <div style={{ marginTop: "1.8rem" }}>
                 <span style={labelStyle}>Öffnungszeiten</span>
                 {[
-                  { day: "Mo – Fr", time: "08:00 – 18:00 Uhr" },
-                  { day: "Samstag", time: "08:00 – 14:00 Uhr" },
-                  { day: "Sonntag", time: "geschlossen" },
+                  { day: "Mo – Fr", time: "09:30 – 18:00 Uhr" },
+                  { day: "Samstag", time: "09:30 – 14:00 Uhr" },
+                  { day: "Sonntag", time: "Blumenanlieferungen" },
                 ].map((o) => (
                   <div
                     key={o.day}
                     style={{
                       fontFamily: "var(--font-cormorant)",
-                      color: "#FAF4EE",
-                      fontSize: "0.95rem",
-                      opacity: 0.55,
-                      lineHeight: 2.1,
+                      color: "#ffffff",
+                      fontSize: "1.35rem",
+                      opacity: 0.9,
+                      lineHeight: 2.0,
                       display: "flex",
                       gap: "0.5rem",
                       justifyContent: "space-between",
-                      maxWidth: "220px",
+                      maxWidth: "240px",
                     }}
                   >
                     <span>{o.day}</span>
-                    <span style={{ opacity: 0.7 }}>{o.time}</span>
+                    <span style={{ opacity: 0.75 }}>{o.time}</span>
                   </div>
                 ))}
               </div>
@@ -223,9 +225,9 @@ export function SiteFooter() {
           <p
             style={{
               fontFamily: "var(--font-cormorant)",
-              color: "#FAF4EE",
-              opacity: 0.28,
-              fontSize: "0.72rem",
+              color: "#ffffff",
+              opacity: 0.55,
+              fontSize: "0.9rem",
               letterSpacing: "0.06em",
             }}
           >
@@ -243,7 +245,7 @@ export function SiteFooter() {
                   fontFamily: "var(--font-cormorant)",
                   color: "#FAF4EE",
                   opacity: 0.28,
-                  fontSize: "0.72rem",
+                  fontSize: "0.9rem",
                   letterSpacing: "0.08em",
                   textDecoration: "none",
                   transition: "opacity 0.2s",

@@ -1,46 +1,121 @@
 "use client";
 
 import { useState } from "react";
-import { BlurTextEffect } from "./BlurTextEffect";
-
-const contactLinks = [
-  {
-    script: "Anrufen",
-    label: "TELEFON",
-    value: "02362 9993954",
-    href: "tel:023629993954",
-    cta: "Jetzt anrufen →",
-  },
-  {
-    script: "WhatsApp",
-    label: "DIREKT BESTELLEN",
-    value: "0177 4878890",
-    href: "https://wa.me/491774878890",
-    cta: "Nachricht schreiben →",
-  },
-  {
-    script: "Besuchen",
-    label: "ADRESSE",
-    value: "Lippestraße, Dorsten",
-    href: "https://maps.google.com/?q=Lippestraße+Dorsten",
-    cta: "Route planen →",
-  },
-  {
-    script: "E-Mail",
-    label: "EMAIL",
-    value: "info@floristik-koester.de",
-    href: "mailto:info@floristik-koester.de",
-    cta: "E-Mail senden →",
-  },
-];
-
-const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com/floristikkoester", handle: "@floristikkoester" },
-  { label: "Facebook", href: "https://facebook.com/FloristikKoester", handle: "FloristikKoester" },
-  { label: "TikTok", href: "https://tiktok.com/@floristik.koester", handle: "@floristik.koester" },
-];
 
 type Status = "idle" | "loading" | "success" | "error";
+
+const hours = [
+  { day: "Mo – Fr", time: "09:00 – 18:00" },
+  { day: "Samstag", time: "09:00 – 14:00" },
+  { day: "Sonntag", time: "Geschlossen" },
+];
+
+function PhoneIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.08-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </svg>
+  );
+}
+
+function PinIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  );
+}
+
+function ClockIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  );
+}
+
+function MapsIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+}
+
+function TikTokIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+  );
+}
+
+const socialLinks = [
+  { label: "Instagram", handle: "@floristikkoester", href: "https://instagram.com/floristikkoester", icon: InstagramIcon },
+  { label: "Facebook", handle: "FloristikKoester", href: "https://facebook.com/FloristikKoester", icon: FacebookIcon },
+  { label: "TikTok", handle: "@floristik.koester", href: "https://tiktok.com/@floristik.koester", icon: TikTokIcon },
+];
+
+const fieldBase: React.CSSProperties = {
+  background: "#ffffff",
+  border: "1.5px solid rgba(27,43,122,0.15)",
+  borderRadius: "10px",
+  padding: "0.85rem 1rem",
+  color: "#1B2B7A",
+  fontFamily: "var(--font-cormorant)",
+  fontSize: "1.05rem",
+  outline: "none",
+  transition: "border-color 0.2s",
+  width: "100%",
+};
+
+const labelBase: React.CSSProperties = {
+  fontFamily: "system-ui, sans-serif",
+  color: "#1B2B7A",
+  opacity: 0.5,
+  fontSize: "0.68rem",
+  letterSpacing: "0.14em",
+  textTransform: "uppercase",
+  fontWeight: 600,
+};
 
 export function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
@@ -81,386 +156,347 @@ export function ContactSection() {
       style={{ background: "#ffffff" }}
     >
       <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-16 items-stretch">
 
-        {/* Headline */}
-        <div className="mb-14">
-          <p
-            style={{
-              fontFamily: "var(--font-great-vibes)",
-              color: "#C4545A",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              lineHeight: 1.2,
-              marginBottom: "0.3rem",
-            }}
-          >
-            Wir freuen uns auf Sie
-          </p>
-          <h2
-            style={{
-              fontFamily: "var(--font-cormorant)",
-              color: "#1B2B7A",
-              fontSize: "clamp(2.6rem, 5.5vw, 4.2rem)",
-              fontWeight: 600,
-              letterSpacing: "-0.01em",
-              lineHeight: 1.08,
-              maxWidth: "600px",
-            }}
-          >
-            <BlurTextEffect>Kontakt & Bestellung</BlurTextEffect>
-          </h2>
-          <p
-            style={{
-              fontFamily: "var(--font-cormorant)",
-              color: "#1B2B7A",
-              opacity: 0.55,
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-              maxWidth: "480px",
-              marginTop: "1rem",
-            }}
-          >
-            Schreiben Sie uns — wir antworten schnell und persönlich.
-          </p>
-        </div>
-
-        {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-
-          {/* LEFT — Email form */}
-          <form
-            onSubmit={handleSubmit}
-            noValidate
-            style={{
-              background: "#1B2B7A",
-              borderRadius: "24px",
-              padding: "clamp(2rem, 4vw, 3rem)",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.25rem",
-            }}
-          >
-            <p
+          {/* LEFT — Heading + Form */}
+          <div>
+            {/* Heading */}
+            <h2
               style={{
-                fontFamily: "var(--font-great-vibes)",
-                color: "#F4C2C9",
-                fontSize: "2rem",
-                lineHeight: 1.2,
-                marginBottom: "0.25rem",
+                fontFamily: "var(--font-cormorant)",
+                color: "#1B2B7A",
+                fontSize: "clamp(2.4rem, 5vw, 3.8rem)",
+                fontWeight: 700,
+                lineHeight: 1.1,
+                marginBottom: "0.75rem",
               }}
             >
-              Schreiben Sie uns
-            </p>
-
-            {/* Name + Email row */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <FormField
-                label="Name"
-                type="text"
-                placeholder="Ihr Name"
-                value={form.name}
-                onChange={update("name")}
-                required
-              />
-              <FormField
-                label="E-Mail"
-                type="email"
-                placeholder="ihre@email.de"
-                value={form.email}
-                onChange={update("email")}
-                required
-              />
-            </div>
-
-            <FormField
-              label="Betreff"
-              type="text"
-              placeholder="z. B. Hochzeitsblumen, Bestellung …"
-              value={form.subject}
-              onChange={update("subject")}
-            />
-
-            {/* Textarea */}
-            <div className="flex flex-col gap-1.5">
-              <label
+              Schreiben Sie uns{" "}
+              <span
                 style={{
-                  fontFamily: "var(--font-cormorant)",
-                  color: "#FAF4EE",
-                  opacity: 0.6,
-                  fontSize: "0.7rem",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
+                  fontFamily: "var(--font-great-vibes)",
+                  color: "#C4545A",
+                  fontWeight: 400,
+                  fontSize: "1.1em",
                 }}
               >
-                Nachricht *
-              </label>
-              <textarea
-                rows={5}
-                placeholder="Ihre Nachricht an uns …"
-                value={form.message}
-                onChange={update("message")}
-                required
-                style={{
-                  background: "rgba(255,255,255,0.07)",
-                  border: "1.5px solid rgba(255,255,255,0.15)",
-                  borderRadius: "12px",
-                  padding: "0.9rem 1.1rem",
-                  color: "#FAF4EE",
-                  fontFamily: "var(--font-cormorant)",
-                  fontSize: "1rem",
-                  lineHeight: 1.6,
-                  resize: "vertical",
-                  outline: "none",
-                  transition: "border-color 0.2s",
-                }}
-                onFocus={(e) => (e.target.style.borderColor = "rgba(244,194,201,0.6)")}
-                onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.15)")}
-              />
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              disabled={status === "loading"}
+                eine Nachricht
+              </span>
+            </h2>
+            <p
               style={{
-                marginTop: "0.5rem",
-                background: status === "loading" ? "rgba(244,194,201,0.5)" : "#F4C2C9",
-                color: "#1B2B7A",
                 fontFamily: "var(--font-cormorant)",
-                fontSize: "0.82rem",
-                fontWeight: 700,
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                border: "none",
-                borderRadius: "999px",
-                padding: "1rem 2.5rem",
-                cursor: status === "loading" ? "not-allowed" : "pointer",
-                alignSelf: "flex-start",
-                transition: "background 0.2s, transform 0.15s",
-              }}
-              onMouseEnter={(e) => {
-                if (status !== "loading") (e.currentTarget.style.transform = "translateY(-1px)");
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget.style.transform = "translateY(0)");
+                color: "#1B2B7A",
+                opacity: 0.55,
+                fontSize: "1.1rem",
+                lineHeight: 1.7,
+                marginBottom: "2.5rem",
+                maxWidth: "480px",
               }}
             >
-              {status === "loading" ? "Wird gesendet …" : "Nachricht senden"}
-            </button>
+              Wir melden uns so schnell wie möglich bei Ihnen — persönlich und kompetent.
+            </p>
 
-            {status === "success" && (
-              <p style={{ fontFamily: "var(--font-cormorant)", color: "#F4C2C9", fontSize: "0.95rem", marginTop: "0.25rem" }}>
-                ✓ Vielen Dank! Ihre Nachricht wurde gesendet.
-              </p>
-            )}
-            {status === "error" && (
-              <p style={{ fontFamily: "var(--font-cormorant)", color: "#fca5a5", fontSize: "0.95rem", marginTop: "0.25rem" }}>
-                ✗ {errorMsg}
-              </p>
-            )}
-          </form>
+            {/* Form */}
+            <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
 
-          {/* RIGHT — Maps + Links */}
-          <div className="flex flex-col gap-5">
+              {/* Name + Email row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-1.5">
+                  <label style={labelBase}>Name *</label>
+                  <input
+                    type="text"
+                    placeholder="Ihr Name"
+                    value={form.name}
+                    onChange={update("name")}
+                    required
+                    style={fieldBase}
+                    onFocus={(e) => (e.target.style.borderColor = "#C4545A")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(27,43,122,0.15)")}
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label style={labelBase}>E-Mail *</label>
+                  <input
+                    type="email"
+                    placeholder="ihre@email.de"
+                    value={form.email}
+                    onChange={update("email")}
+                    required
+                    style={fieldBase}
+                    onFocus={(e) => (e.target.style.borderColor = "#C4545A")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(27,43,122,0.15)")}
+                  />
+                </div>
+              </div>
 
-            {/* Google Maps */}
+              <div className="flex flex-col gap-1.5">
+                <label style={labelBase}>Betreff</label>
+                <input
+                  type="text"
+                  placeholder="z. B. Hochzeitsblumen, Bestellung …"
+                  value={form.subject}
+                  onChange={update("subject")}
+                  style={fieldBase}
+                  onFocus={(e) => (e.target.style.borderColor = "#C4545A")}
+                  onBlur={(e) => (e.target.style.borderColor = "rgba(27,43,122,0.15)")}
+                />
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label style={labelBase}>Nachricht *</label>
+                <textarea
+                  rows={6}
+                  placeholder="Ihre Nachricht an uns …"
+                  value={form.message}
+                  onChange={update("message")}
+                  required
+                  style={{ ...fieldBase, resize: "vertical", lineHeight: 1.6 }}
+                  onFocus={(e) => (e.target.style.borderColor = "#C4545A")}
+                  onBlur={(e) => (e.target.style.borderColor = "rgba(27,43,122,0.15)")}
+                />
+              </div>
+
+              {/* Submit row */}
+              <div className="flex flex-wrap items-center gap-4 mt-1">
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  style={{
+                    background: status === "loading" ? "rgba(27,43,122,0.5)" : "#1B2B7A",
+                    color: "#FAF4EE",
+                    fontFamily: "system-ui, sans-serif",
+                    fontSize: "0.82rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.08em",
+                    border: "none",
+                    borderRadius: "999px",
+                    padding: "0.9rem 2.2rem",
+                    cursor: status === "loading" ? "not-allowed" : "pointer",
+                    transition: "background 0.2s, transform 0.15s",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    flexShrink: 0,
+                  }}
+                  onMouseEnter={(e) => { if (status !== "loading") e.currentTarget.style.transform = "translateY(-1px)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
+                >
+                  {status === "loading" ? "Wird gesendet …" : "Nachricht senden"}
+                  {status !== "loading" && <span style={{ fontSize: "1rem" }}>✉</span>}
+                </button>
+
+                {status === "idle" && (
+                  <p style={{ fontFamily: "system-ui, sans-serif", color: "#1B2B7A", opacity: 0.4, fontSize: "0.78rem", lineHeight: 1.5 }}>
+                    Ihre Daten werden vertraulich behandelt.
+                  </p>
+                )}
+                {status === "success" && (
+                  <p style={{ fontFamily: "system-ui, sans-serif", color: "#1B2B7A", fontSize: "0.85rem" }}>
+                    ✓ Vielen Dank! Ihre Nachricht wurde gesendet.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p style={{ fontFamily: "system-ui, sans-serif", color: "#C4545A", fontSize: "0.85rem" }}>
+                    ✗ {errorMsg}
+                  </p>
+                )}
+              </div>
+
+            </form>
+          </div>
+
+          {/* RIGHT — Contact card */}
+          <div className="flex flex-col gap-4" style={{ height: "100%" }}>
             <div
               style={{
-                borderRadius: "20px",
-                overflow: "hidden",
-                height: "260px",
+                background: "#ffffff",
                 border: "1.5px solid rgba(27,43,122,0.1)",
+                borderRadius: "20px",
+                padding: "2rem",
+                flexGrow: 1,
               }}
             >
-              <iframe
-                src="https://maps.google.com/maps?q=Lippestraße+Dorsten+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0, display: "block" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Floristik Köster — Standort"
-              />
-            </div>
+              <p
+                style={{
+                  fontFamily: "var(--font-cormorant)",
+                  color: "#1B2B7A",
+                  fontSize: "1.3rem",
+                  fontWeight: 700,
+                  marginBottom: "1.75rem",
+                }}
+              >
+                Kontaktdaten
+              </p>
 
-            {/* Contact link cards */}
-            <div className="grid grid-cols-2 gap-3">
-              {contactLinks.map((c) => (
-                <a
-                  key={c.label}
-                  href={c.href}
-                  target={c.href.startsWith("http") ? "_blank" : undefined}
-                  rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="group flex flex-col justify-between rounded-2xl p-5 transition-all hover:shadow-md"
-                  style={{
-                    background: "#FAF4EE",
-                    textDecoration: "none",
-                    minHeight: "120px",
-                    border: "1.5px solid rgba(27,43,122,0.07)",
-                  }}
-                >
-                  <p
-                    style={{
-                      fontFamily: "var(--font-great-vibes)",
-                      color: "#C4545A",
-                      fontSize: "1.4rem",
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {c.script}
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+
+                {/* Telefon */}
+                <ContactRow icon={<PhoneIcon />} label="Telefon" href="tel:023629993954">
+                  02362 9993954
+                </ContactRow>
+
+                {/* E-Mail */}
+                <ContactRow icon={<MailIcon />} label="E-Mail" href="mailto:info@floristik-koester.de">
+                  info@floristik-koester.de
+                </ContactRow>
+
+                {/* Adresse */}
+                <ContactRow icon={<PinIcon />} label="Adresse" href="https://maps.google.com/?q=Lippestraße+Dorsten">
+                  <span>Lippestraße</span>
+                  <span style={{ display: "block", opacity: 0.6, fontSize: "0.88rem" }}>46282 Dorsten</span>
+                </ContactRow>
+
+                {/* WhatsApp */}
+                <ContactRow icon={<WhatsAppIcon />} label="WhatsApp" href="https://wa.me/491774878890">
+                  0177 4878890
+                </ContactRow>
+
+                {/* Öffnungszeiten */}
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
+                    <span style={{ color: "#C4545A" }}><ClockIcon /></span>
+                    <span style={{ fontFamily: "system-ui, sans-serif", color: "#1B2B7A", opacity: 0.45, fontSize: "0.65rem", letterSpacing: "0.14em", textTransform: "uppercase", fontWeight: 700 }}>
+                      Öffnungszeiten
+                    </span>
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                    {hours.map(({ day, time }) => (
+                      <div key={day} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                        <span style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "1rem", fontWeight: 500 }}>{day}</span>
+                        <span style={{
+                          fontFamily: "var(--font-cormorant)",
+                          color: "#1B2B7A",
+                          opacity: time === "Geschlossen" ? 0.35 : 0.85,
+                          fontSize: "1rem",
+                          fontWeight: time === "Geschlossen" ? 400 : 600,
+                        }}>
+                          {time}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div style={{ height: "1px", background: "rgba(27,43,122,0.08)" }} />
+
+                {/* Social Links */}
+                <div>
+                  <p style={{ fontFamily: "system-ui, sans-serif", color: "#1B2B7A", opacity: 0.45, fontSize: "0.65rem", letterSpacing: "0.14em", textTransform: "uppercase", fontWeight: 700, marginBottom: "0.85rem" }}>
+                    Social Media
                   </p>
-                  <div>
-                    <p
-                      style={{
-                        fontFamily: "var(--font-cormorant)",
-                        color: "#1B2B7A",
-                        opacity: 0.45,
-                        fontSize: "0.65rem",
-                        letterSpacing: "0.16em",
-                        textTransform: "uppercase",
-                        marginBottom: "0.2rem",
-                      }}
-                    >
-                      {c.label}
-                    </p>
-                    <p
-                      style={{
-                        fontFamily: "var(--font-cormorant)",
-                        color: "#1B2B7A",
-                        fontSize: "0.95rem",
-                        fontWeight: 600,
-                        lineHeight: 1.3,
-                        wordBreak: "break-word",
-                      }}
-                    >
-                      {c.value}
-                    </p>
-                    <p
-                      style={{
-                        fontFamily: "var(--font-cormorant)",
-                        color: "#C4545A",
-                        fontSize: "0.75rem",
-                        letterSpacing: "0.06em",
-                        marginTop: "0.4rem",
-                      }}
-                    >
-                      {c.cta}
-                    </p>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
+                    {socialLinks.map((s) => (
+                      <a
+                        key={s.label}
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "space-between" }}
+                        className="group"
+                      >
+                        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                          <span style={{ color: "#C4545A" }}><s.icon /></span>
+                          <span style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "1rem", fontWeight: 600 }}>{s.label}</span>
+                        </div>
+                        <span style={{ fontFamily: "var(--font-cormorant)", color: "#C4545A", fontSize: "0.9rem", opacity: 0.7 }}>{s.handle}</span>
+                      </a>
+                    ))}
                   </div>
-                </a>
-              ))}
+                </div>
+
+              </div>
             </div>
 
-            {/* Social links */}
-            <div
-              className="flex gap-3"
-              style={{ marginTop: "0.25rem" }}
+            {/* Google Maps button */}
+            <a
+              href="https://maps.google.com/?q=Lippestraße+Dorsten"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "0.6rem",
+                background: "#1B2B7A",
+                color: "#FAF4EE",
+                fontFamily: "system-ui, sans-serif",
+                fontSize: "0.82rem",
+                fontWeight: 600,
+                letterSpacing: "0.06em",
+                textDecoration: "none",
+                padding: "1rem",
+                borderRadius: "999px",
+                transition: "opacity 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
             >
-              {socialLinks.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-between rounded-2xl px-5 py-4 transition-all hover:opacity-80"
-                  style={{
-                    background: "#FDF0F2",
-                    textDecoration: "none",
-                    border: "1.5px solid rgba(196,84,90,0.12)",
-                  }}
-                >
-                  <div>
-                    <p
-                      style={{
-                        fontFamily: "var(--font-cormorant)",
-                        color: "#1B2B7A",
-                        fontWeight: 700,
-                        fontSize: "0.85rem",
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      {s.label}
-                    </p>
-                    <p
-                      style={{
-                        fontFamily: "var(--font-cormorant)",
-                        color: "#C4545A",
-                        fontSize: "0.8rem",
-                      }}
-                    >
-                      {s.handle}
-                    </p>
-                  </div>
-                  <span
-                    style={{
-                      color: "#C4545A",
-                      fontSize: "1.1rem",
-                      opacity: 0.7,
-                    }}
-                  >
-                    →
-                  </span>
-                </a>
-              ))}
-            </div>
-
+              <MapsIcon />
+              In Google Maps öffnen
+            </a>
           </div>
+
         </div>
+
+        {/* Google Maps */}
+        <div
+          style={{
+            marginTop: "3rem",
+            borderRadius: "20px",
+            overflow: "hidden",
+            height: "380px",
+            border: "1.5px solid rgba(27,43,122,0.1)",
+          }}
+        >
+          <iframe
+            src="https://maps.google.com/maps?q=Lippestraße+Dorsten+46282&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0, display: "block" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Floristik Köster — Standort Dorsten"
+          />
+        </div>
+
       </div>
     </section>
   );
 }
 
-function FormField({
+function ContactRow({
+  icon,
   label,
-  type,
-  placeholder,
-  value,
-  onChange,
-  required,
+  href,
+  children,
 }: {
+  icon: React.ReactNode;
   label: string;
-  type: string;
-  placeholder: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  required?: boolean;
+  href: string;
+  children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-1.5">
-      <label
-        style={{
-          fontFamily: "var(--font-cormorant)",
-          color: "#FAF4EE",
-          opacity: 0.6,
-          fontSize: "0.7rem",
-          letterSpacing: "0.18em",
-          textTransform: "uppercase",
-        }}
-      >
-        {label} {required && "*"}
-      </label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        required={required}
-        style={{
-          background: "rgba(255,255,255,0.07)",
-          border: "1.5px solid rgba(255,255,255,0.15)",
-          borderRadius: "12px",
-          padding: "0.85rem 1.1rem",
-          color: "#FAF4EE",
-          fontFamily: "var(--font-cormorant)",
-          fontSize: "1rem",
-          outline: "none",
-          transition: "border-color 0.2s",
-        }}
-        onFocus={(e) => (e.target.style.borderColor = "rgba(244,194,201,0.6)")}
-        onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.15)")}
-      />
-    </div>
+    <a
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+      style={{ textDecoration: "none", display: "block" }}
+      className="group"
+    >
+      <div style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem" }}>
+        <span style={{ color: "#C4545A", marginTop: "0.15rem", flexShrink: 0 }}>{icon}</span>
+        <div>
+          <p style={{ fontFamily: "system-ui, sans-serif", color: "#1B2B7A", opacity: 0.45, fontSize: "0.65rem", letterSpacing: "0.14em", textTransform: "uppercase", fontWeight: 700, marginBottom: "0.2rem" }}>
+            {label}
+          </p>
+          <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.4 }}>
+            {children}
+          </p>
+        </div>
+      </div>
+    </a>
   );
 }

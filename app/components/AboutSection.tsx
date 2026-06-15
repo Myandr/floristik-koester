@@ -5,7 +5,7 @@ export function AboutSection() {
     <section
       id="ueber-uns"
       className="py-24 md:py-32 px-6 md:px-12 lg:px-20"
-      style={{ background: "#1B2B7A" }}
+      style={{ background: "#ffffff" }}
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
         <div>
@@ -13,7 +13,7 @@ export function AboutSection() {
             className="mb-6"
             style={{
               fontFamily: "var(--font-great-vibes)",
-              color: "#F4C2C9",
+              color: "#C4545A",
               fontSize: "clamp(2rem, 4.5vw, 3.6rem)",
               lineHeight: 1.35,
             }}
@@ -26,18 +26,18 @@ export function AboutSection() {
             style={{
               width: "44px",
               height: "1px",
-              background: "rgba(244, 194, 201, 0.4)",
+              background: "rgba(27, 43, 122, 0.2)",
               marginBottom: "1.5rem",
             }}
           />
           <p
             style={{
               fontFamily: "var(--font-cormorant)",
-              color: "#FAF4EE",
+              color: "#1B2B7A",
               fontSize: "clamp(1.4rem, 2.6vw, 1.95rem)",
               fontWeight: 300,
               lineHeight: 1.55,
-              opacity: 0.86,
+              opacity: 0.75,
               fontStyle: "italic",
             }}
           >
@@ -49,8 +49,8 @@ export function AboutSection() {
           <p
             style={{
               fontFamily: "var(--font-cormorant)",
-              color: "#FAF4EE",
-              opacity: 0.78,
+              color: "#1B2B7A",
+              opacity: 0.72,
               fontSize: "0.9rem",
               lineHeight: 1.85,
             }}
@@ -63,8 +63,8 @@ export function AboutSection() {
           <p
             style={{
               fontFamily: "var(--font-cormorant)",
-              color: "#FAF4EE",
-              opacity: 0.78,
+              color: "#1B2B7A",
+              opacity: 0.72,
               fontSize: "0.9rem",
               lineHeight: 1.85,
             }}
@@ -79,8 +79,8 @@ export function AboutSection() {
             rel="noopener noreferrer"
             style={{
               fontFamily: "var(--font-cormorant)",
-              color: "#1B2B7A",
-              background: "#FAF4EE",
+              color: "#FAF4EE",
+              background: "#1B2B7A",
               fontSize: "1rem",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
@@ -95,13 +95,13 @@ export function AboutSection() {
             Strauß bestellen
           </a>
           <div className="flex flex-wrap gap-2.5 pt-2">
-            {["Frische Saisonblumen", "Handgefertigt", "5★ auf Google", "Seit 1999"].map((tag) => (
+            {["Frische Saisonblumen", "Handgefertigt", "5★ auf Google"].map((tag) => (
               <span
                 key={tag}
                 className="px-4 py-1.5 rounded-full"
                 style={{
-                  border: "1px solid rgba(244, 194, 201, 0.32)",
-                  color: "#F4C2C9",
+                  border: "1px solid rgba(27, 43, 122, 0.2)",
+                  color: "#1B2B7A",
                   fontFamily: "var(--font-cormorant)",
                   fontSize: "0.68rem",
                   letterSpacing: "0.14em",

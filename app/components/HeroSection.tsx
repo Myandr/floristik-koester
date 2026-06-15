@@ -33,7 +33,7 @@ export function HeroSection() {
           style={{
             fontFamily: "var(--font-great-vibes)",
             color: "#1B2B7A",
-            fontSize: "clamp(4rem, 11vw, 9rem)",
+            fontSize: "clamp(5rem, 15vw, 13rem)",
             lineHeight: 1.15,
             textAlign: "center",
             textShadow: "0 2px 32px rgba(250,244,238,0.5)",
@@ -45,14 +45,14 @@ export function HeroSection() {
           style={{
             fontFamily: "var(--font-cormorant)",
             color: "#1B2B7A",
-            fontSize: "clamp(0.78rem, 1.4vw, 1rem)",
+            fontSize: "clamp(1rem, 2vw, 1.5rem)",
             letterSpacing: "0.32em",
             textTransform: "uppercase",
             textAlign: "center",
             opacity: 0.65,
           }}
         >
-          Blumen mit Herz · Dorsten seit 1999
+          Blumen mit Herz in Dorsten
         </p>
       </div>
 
@@ -70,20 +70,26 @@ export function HeroSection() {
             marginBottom: "0.45rem",
           }}
         >
-          Persönliche Handschrift
+          Blumenautomaten — 24h
         </p>
-        <p
-          className="hidden sm:block"
+<a
+          href="/blumen-automaten"
+          className="hidden sm:inline-flex items-center gap-2"
           style={{
             fontFamily: "var(--font-cormorant)",
             color: "#1B2B7A",
-            opacity: 0.6,
-            fontSize: "0.92rem",
-            lineHeight: 1.7,
+            fontSize: "1rem",
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            textDecoration: "none",
+            opacity: 0.55,
+            marginTop: "0.75rem",
+            display: "inline-flex",
           }}
         >
-          Blumen sind mehr als ein Geschenk — sie sprechen eine Sprache der Gefühle.
-        </p>
+          <span style={{ color: "#C4545A", fontSize: "0.55rem" }}>●</span>
+          Jetzt Standorte entdecken
+        </a>
       </div>
 
       {/* Bottom-right round CTA — outer rotates, text stays upright */}

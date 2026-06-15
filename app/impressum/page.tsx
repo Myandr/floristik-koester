@@ -1,3 +1,5 @@
+import { SiteFooter } from "../components/SiteFooter";
+
 export default function Impressum() {
   const sectionStyle = { marginBottom: "2.5rem" };
 
@@ -165,23 +167,7 @@ export default function Impressum() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer
-        className="py-6 px-6 md:px-10 text-center"
-        style={{ borderTop: "1px solid rgba(196, 84, 90, 0.15)" }}
-      >
-        <p
-          style={{
-            fontFamily: "var(--font-cormorant)",
-            color: "#1B2B7A",
-            opacity: 0.4,
-            fontSize: "0.72rem",
-            letterSpacing: "0.1em",
-          }}
-        >
-          © {new Date().getFullYear()} Floristik Köster · Alle Rechte vorbehalten
-        </p>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

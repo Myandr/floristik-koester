@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SiteNav } from "../components/SiteNav";
+import { SiteFooter } from "../components/SiteFooter";
 
 const packages = [
   {
@@ -40,7 +41,7 @@ export default function BusinessFlowers() {
       {/* Hero */}
       <div className="relative overflow-hidden" style={{ minHeight: "520px" }}>
         <Image
-          src="/images/blume3.jpg"
+          src="/images/flower1.jpeg"
           alt="Business Flowers Dorsten"
           fill
           priority
@@ -170,7 +171,7 @@ export default function BusinessFlowers() {
       </div>
 
       {/* Benefits */}
-      <div className="px-6 md:px-10 lg:px-16 py-16 md:py-24" style={{ background: "#FDF0F2" }}>
+      <div className="px-6 md:px-10 lg:px-16 py-16 md:py-24" style={{ background: "#ffffff" }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-8">
             <div>
@@ -201,14 +202,14 @@ export default function BusinessFlowers() {
       </div>
 
       {/* CTA */}
-      <div className="px-6 md:px-10 lg:px-16 py-16 text-center" style={{ background: "#1B2B7A" }}>
-        <p style={{ fontFamily: "var(--font-great-vibes)", color: "#F4C2C9", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
+      <div className="px-6 md:px-10 lg:px-16 py-16 text-center" style={{ background: "#ffffff" }}>
+        <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
           Lassen Sie uns sprechen
         </p>
-        <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#FAF4EE", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 600, marginBottom: "0.8rem" }}>
+        <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 600, marginBottom: "0.8rem" }}>
           Jetzt unverbindliches Angebot anfragen
         </h2>
-        <p style={{ fontFamily: "var(--font-cormorant)", color: "#FAF4EE", opacity: 0.55, fontSize: "1rem", lineHeight: 1.8, maxWidth: "440px", margin: "0 auto 2rem" }}>
+        <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.55, fontSize: "1rem", lineHeight: 1.8, maxWidth: "440px", margin: "0 auto 2rem" }}>
           Wir erstellen Ihnen ein individuelles Angebot, kostenlos und ohne Verpflichtung.
         </p>
         <a
@@ -217,8 +218,8 @@ export default function BusinessFlowers() {
           rel="noopener noreferrer"
           style={{
             fontFamily: "var(--font-cormorant)",
-            color: "#1B2B7A",
-            background: "#F4C2C9",
+            color: "#FAF4EE",
+            background: "#C4545A",
             fontSize: "0.85rem",
             letterSpacing: "0.16em",
             textTransform: "uppercase",
@@ -233,11 +234,7 @@ export default function BusinessFlowers() {
         </a>
       </div>
 
-      <footer className="py-6 px-6 md:px-10 text-center" style={{ borderTop: "1px solid rgba(27,43,122,0.08)" }}>
-        <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.35, fontSize: "0.72rem", letterSpacing: "0.1em" }}>
-          {new Date().getFullYear()} Floristik Koester &middot; Alle Rechte vorbehalten
-        </p>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

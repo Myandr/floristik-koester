@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SiteNav } from "../components/SiteNav";
+import { SiteFooter } from "../components/SiteFooter";
 
 const values = [
   {
@@ -9,7 +10,7 @@ const values = [
   },
   {
     script: "Erfahrung",
-    title: "Seit 1999 in Dorsten",
+    title: "Verwurzelt in Dorsten",
     desc: "Ueber 25 Jahre floristisches Handwerk. In dieser Zeit haben wir tausende Straeusse gebunden, Hochzeiten begleitet und Menschen eine Freude gemacht.",
   },
   {
@@ -20,7 +21,7 @@ const values = [
 ];
 
 const facts = [
-  { value: "1999", label: "Gegruendet" },
+  { value: "25+", label: "Jahre vor Ort" },
   { value: "25+", label: "Jahre Erfahrung" },
   { value: "5★", label: "Google-Bewertung" },
   { value: "100%", label: "Handarbeit" },
@@ -87,14 +88,14 @@ export default function UnserTeam() {
       </div>
 
       {/* Facts */}
-      <div style={{ background: "#1B2B7A" }}>
+      <div style={{ background: "#ffffff" }}>
         <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 py-12 grid grid-cols-2 md:grid-cols-4 gap-6">
           {facts.map((f) => (
             <div key={f.label} className="text-center">
-              <p style={{ fontFamily: "var(--font-cormorant)", color: "#F4C2C9", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, lineHeight: 1 }}>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, lineHeight: 1 }}>
                 {f.value}
               </p>
-              <p style={{ fontFamily: "var(--font-cormorant)", color: "#FAF4EE", opacity: 0.5, fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", marginTop: "0.4rem" }}>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.5, fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", marginTop: "0.4rem" }}>
                 {f.label}
               </p>
             </div>
@@ -123,7 +124,7 @@ export default function UnserTeam() {
               </p>
             </div>
             <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.7, fontSize: "1.1rem", lineHeight: 1.9 }}>
-              Seit 1999 fuehre ich Floristik Koester mit Leidenschaft und Herzblut. Was als kleiner Blumenladen begann, ist heute ein fester Bestandteil Dorstens geworden. Ich liebe es, fuer Menschen Freude zu schaffen, durch Farben, Duft und die Schoenheit der Natur.
+              Mit Leidenschaft und Herzblut fuehre ich Floristik Koester. Was als kleiner Blumenladen begann, ist heute ein fester Bestandteil Dorstens geworden. Ich liebe es, fuer Menschen Freude zu schaffen, durch Farben, Duft und die Schoenheit der Natur.
             </p>
             <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.7, fontSize: "1.1rem", lineHeight: 1.9 }}>
               Jeder Strauss, den wir binden, erzaehlt eine Geschichte. Ich freue mich darauf, auch Ihre Geschichte zu erzaehlen.
@@ -153,7 +154,7 @@ export default function UnserTeam() {
       </div>
 
       {/* Values */}
-      <div className="px-6 md:px-10 lg:px-16 py-20 md:py-28" style={{ background: "#FAF4EE" }}>
+      <div className="px-6 md:px-10 lg:px-16 py-20 md:py-28" style={{ background: "#ffffff" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
@@ -181,6 +182,32 @@ export default function UnserTeam() {
         </div>
       </div>
 
+      {/* Google Review */}
+      <div className="px-6 md:px-10 lg:px-16 py-20 md:py-28" style={{ background: "#ffffff" }}>
+        <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
+          <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1.2 }}>
+            Ihre Meinung zählt
+          </p>
+          <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)", fontWeight: 600, lineHeight: 1.2 }}>
+            Wir freuen uns sehr über Ihre Google-Bewertung – teilen Sie Ihre Blumenfreude mit uns!
+          </h2>
+          <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.65, fontSize: "1.05rem", lineHeight: 1.85, maxWidth: "560px" }}>
+            Ihre Zufriedenheit liegt uns am Herzen. Wenn Sie mit unserem Service glücklich sind, freuen wir uns sehr über eine positive Google-Bewertung. Ihre Rückmeldungen helfen uns, immer besser zu werden – und geben anderen Kunden einen Eindruck von der Qualität und Leidenschaft, die in unseren Blumenarrangements steckt.
+          </p>
+          <a
+            href="https://www.google.com/maps/search/Floristik+Köster+Dorsten"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontFamily: "var(--font-cormorant)", color: "#FAF4EE", background: "#C4545A", fontSize: "0.85rem", letterSpacing: "0.18em", textTransform: "uppercase", textDecoration: "none", padding: "1rem 2.6rem", borderRadius: "999px", fontWeight: 700, display: "inline-block", marginTop: "0.5rem" }}
+          >
+            Jetzt auf Google bewerten
+          </a>
+          <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.35, fontSize: "0.8rem", letterSpacing: "0.1em", fontStyle: "italic" }}>
+            Danke, dass Sie uns helfen, noch besser zu werden.
+          </p>
+        </div>
+      </div>
+
       {/* Image strip */}
       <div className="grid grid-cols-2 md:grid-cols-4" style={{ height: "280px" }}>
         {["/images/blume1.jpg", "/images/blume3.jpg", "/images/picture-2600.jpeg", "/images/blume4.jpg"].map((src, i) => (
@@ -191,19 +218,19 @@ export default function UnserTeam() {
       </div>
 
       {/* CTA */}
-      <div className="px-6 md:px-10 lg:px-16 py-16 text-center" style={{ background: "#1B2B7A" }}>
-        <p style={{ fontFamily: "var(--font-great-vibes)", color: "#F4C2C9", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
+      <div className="px-6 md:px-10 lg:px-16 py-16 text-center" style={{ background: "#ffffff" }}>
+        <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
           Kommen Sie vorbei
         </p>
-        <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#FAF4EE", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 600, marginBottom: "2rem" }}>
+        <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 600, marginBottom: "2rem" }}>
           Wir freuen uns auf Sie
         </h2>
         <a
           href="/kontakt"
           style={{
             fontFamily: "var(--font-cormorant)",
-            color: "#1B2B7A",
-            background: "#F4C2C9",
+            color: "#FAF4EE",
+            background: "#C4545A",
             fontSize: "0.85rem",
             letterSpacing: "0.16em",
             textTransform: "uppercase",
@@ -218,11 +245,7 @@ export default function UnserTeam() {
         </a>
       </div>
 
-      <footer className="py-6 px-6 md:px-10 text-center" style={{ borderTop: "1px solid rgba(27,43,122,0.08)" }}>
-        <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.35, fontSize: "0.72rem", letterSpacing: "0.1em" }}>
-          {new Date().getFullYear()} Floristik Koester &middot; Alle Rechte vorbehalten
-        </p>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

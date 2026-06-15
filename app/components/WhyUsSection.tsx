@@ -3,7 +3,7 @@ import { BlurTextEffect } from "./BlurTextEffect";
 
 const cards = [
   {
-    image: "/images/blume3.jpg",
+    image: "/images/picture-2600-3.jpeg",
     alt: "Blumen bestellen Dorsten",
     tag: "Bestellung",
     detail: "WhatsApp & Telefon",
@@ -14,7 +14,7 @@ const cards = [
     image: "/images/blume4.jpg",
     alt: "Floristik Köster Qualität",
     tag: "Qualität",
-    detail: "Seit 1999",
+    detail: "",
     title: "Frische Blumen in bester Qualität",
     href: "#kontakt",
   },
@@ -72,7 +72,7 @@ export function WhyUsSection() {
                 maxWidth: "380px",
               }}
             >
-              Sie haben wenig Zeit oder möchten Blumen vorbestellen? Schreiben Sie uns einfach per WhatsApp oder rufen Sie an — wir kümmern uns schnell und zuverlässig.
+              Sie haben wenig Zeit oder möchten Blumen vorbestellen? Schreiben Sie uns einfach per WhatsApp oder rufen Sie an — wir kümmern uns schnell und zuverlässig. Wir liefern Blumen auch innerhalb von Dorsten nach Absprache aus.
             </p>
 
             <a

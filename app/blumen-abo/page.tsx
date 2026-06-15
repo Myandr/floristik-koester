@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SiteNav } from "../components/SiteNav";
+import { SiteFooter } from "../components/SiteFooter";
 
 const plans = [
   {
@@ -209,7 +210,7 @@ export default function BlumenAbo() {
       </div>
 
       {/* Gift section */}
-      <div className="px-6 md:px-10 lg:px-16 py-12 md:py-20" style={{ background: "#FDF0F2" }}>
+      <div className="px-6 md:px-10 lg:px-16 py-12 md:py-20" style={{ background: "#ffffff" }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-5 py-8">
             <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "2rem", lineHeight: 1.2 }}>
@@ -280,11 +281,11 @@ export default function BlumenAbo() {
       </div>
 
       {/* CTA */}
-      <div className="px-6 md:px-10 lg:px-16 py-16 text-center" style={{ background: "#1B2B7A" }}>
-        <p style={{ fontFamily: "var(--font-great-vibes)", color: "#F4C2C9", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
+      <div className="px-6 md:px-10 lg:px-16 py-16 text-center" style={{ background: "#ffffff" }}>
+        <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
           bereit fuer Ihr Abo?
         </p>
-        <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#FAF4EE", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 600, marginBottom: "2rem" }}>
+        <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 600, marginBottom: "2rem" }}>
           Jetzt einfach anfragen
         </h2>
         <div className="flex gap-4 justify-center flex-wrap">
@@ -294,8 +295,8 @@ export default function BlumenAbo() {
             rel="noopener noreferrer"
             style={{
               fontFamily: "var(--font-cormorant)",
-              color: "#1B2B7A",
-              background: "#F4C2C9",
+              color: "#FAF4EE",
+              background: "#C4545A",
               fontSize: "0.85rem",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
@@ -311,8 +312,8 @@ export default function BlumenAbo() {
             href="tel:023629993954"
             style={{
               fontFamily: "var(--font-cormorant)",
-              color: "#FAF4EE",
-              border: "1.5px solid rgba(250,244,238,0.3)",
+              color: "#1B2B7A",
+              border: "1.5px solid rgba(27,43,122,0.25)",
               fontSize: "0.85rem",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
@@ -326,11 +327,7 @@ export default function BlumenAbo() {
         </div>
       </div>
 
-      <footer className="py-6 px-6 md:px-10 text-center" style={{ borderTop: "1px solid rgba(27,43,122,0.08)" }}>
-        <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.35, fontSize: "0.72rem", letterSpacing: "0.1em" }}>
-          {new Date().getFullYear()} Floristik Koester &middot; Alle Rechte vorbehalten
-        </p>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

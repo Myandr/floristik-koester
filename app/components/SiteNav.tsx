@@ -8,9 +8,11 @@ const navItems = [
   { label: "Startseite", href: "/" },
   { label: "Galerie", href: "/galerie" },
   { label: "Frische Blumen per Express", href: "/express-blumen" },
+  { label: "Meine Blumenautomaten", href: "/blumen-automaten" },
   { label: "Business Flowers", href: "/business-flowers" },
   { label: "Blumen-Abo", href: "/blumen-abo" },
   { label: "Unser Team", href: "/unser-team" },
+  { label: "Unsere Partner", href: "/partner" },
   { label: "Kontakt & Öffnungszeiten", href: "/kontakt" },
 ];
 
@@ -89,14 +91,17 @@ export function SiteNav({ transparent = false }: { transparent?: boolean }) {
           href={ORDER_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:flex items-center px-5 py-2 rounded-full border transition-all text-[#1B2B7A] hover:bg-[#1B2B7A] hover:text-white"
+          className="hidden sm:flex items-center px-5 py-2 rounded-full border transition-all"
           style={{
-            borderColor: "#1B2B7A",
+            background: solidBg ? "#1B2B7A" : "transparent",
+            borderColor: solidBg ? "#1B2B7A" : "#1B2B7A",
+            color: solidBg ? "#ffffff" : "#1B2B7A",
             fontFamily: "var(--font-cormorant)",
             fontSize: "0.76rem",
             letterSpacing: "0.18em",
             textTransform: "uppercase",
             textDecoration: "none",
+            transition: "background 0.3s, color 0.3s, border-color 0.3s",
           }}
         >
           Strauß Bestellen

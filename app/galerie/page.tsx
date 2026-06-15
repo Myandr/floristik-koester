@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { SiteNav } from "../components/SiteNav";
+import { SiteFooter } from "../components/SiteFooter";
+import { OccasionTextSection } from "../components/OccasionTextSection";
 
 const images = [
   { src: "/images/blume1.jpg", alt: "Blumenstrauss" },
@@ -30,12 +32,12 @@ export default function Galerie() {
       {/* Hero */}
       <div
         className="px-6 md:px-10 lg:px-16 py-20 md:py-28 text-center"
-        style={{ background: "linear-gradient(135deg, #1B2B7A 0%, #2a3d9e 100%)" }}
+        style={{ background: "#ffffff" }}
       >
         <p
           style={{
             fontFamily: "var(--font-great-vibes)",
-            color: "#F4C2C9",
+            color: "#C4545A",
             fontSize: "clamp(2rem, 5vw, 3.5rem)",
             lineHeight: 1.2,
             marginBottom: "0.4rem",
@@ -46,7 +48,7 @@ export default function Galerie() {
         <h1
           style={{
             fontFamily: "var(--font-cormorant)",
-            color: "#FAF4EE",
+            color: "#1B2B7A",
             fontSize: "clamp(2.4rem, 5.5vw, 4rem)",
             fontWeight: 600,
             letterSpacing: "-0.01em",
@@ -58,7 +60,7 @@ export default function Galerie() {
         <p
           style={{
             fontFamily: "var(--font-cormorant)",
-            color: "#FAF4EE",
+            color: "#1B2B7A",
             opacity: 0.55,
             fontSize: "1.05rem",
             lineHeight: 1.8,
@@ -72,7 +74,7 @@ export default function Galerie() {
       </div>
 
       {/* Masonry grid */}
-      <div className="px-4 md:px-8 lg:px-12 py-12 md:py-16" style={{ background: "#FAF4EE" }}>
+      <div className="px-4 md:px-8 lg:px-12 py-12 md:py-16" style={{ background: "#ffffff" }}>
         <style>{`
           .masonry {
             columns: 2;
@@ -234,12 +236,14 @@ export default function Galerie() {
         </div>
       )}
 
+      <OccasionTextSection />
+
       {/* CTA */}
-      <div className="px-6 md:px-10 lg:px-16 py-16 text-center" style={{ background: "#1B2B7A" }}>
-        <p style={{ fontFamily: "var(--font-great-vibes)", color: "#F4C2C9", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
+      <div className="px-6 md:px-10 lg:px-16 py-16 text-center" style={{ background: "#ffffff" }}>
+        <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
           Gefallt Ihnen was Sie sehen?
         </p>
-        <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#FAF4EE", fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontWeight: 600, marginBottom: "2rem" }}>
+        <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontWeight: 600, marginBottom: "2rem" }}>
           Bestellen Sie Ihren eigenen Strauss
         </h2>
         <a
@@ -248,8 +252,8 @@ export default function Galerie() {
           rel="noopener noreferrer"
           style={{
             fontFamily: "var(--font-cormorant)",
-            color: "#1B2B7A",
-            background: "#F4C2C9",
+            color: "#FAF4EE",
+            background: "#C4545A",
             fontSize: "0.85rem",
             letterSpacing: "0.16em",
             textTransform: "uppercase",
@@ -264,11 +268,7 @@ export default function Galerie() {
         </a>
       </div>
 
-      <footer className="py-6 px-6 md:px-10 text-center" style={{ borderTop: "1px solid rgba(27,43,122,0.08)" }}>
-        <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.35, fontSize: "0.72rem", letterSpacing: "0.1em" }}>
-          {new Date().getFullYear()} Floristik Koester &middot; Alle Rechte vorbehalten
-        </p>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
