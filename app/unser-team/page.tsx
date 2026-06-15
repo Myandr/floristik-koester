@@ -6,17 +6,17 @@ const values = [
   {
     script: "Leidenschaft",
     title: "Floristik als Berufung",
-    desc: "Fuer uns sind Blumen mehr als ein Produkt. Jeder Strauss entsteht mit echter Freude am Handwerk und echtem Interesse am Menschen, fuer den er gedacht ist.",
+    desc: "Für uns sind Blumen mehr als ein Produkt. Jeder Strauss entsteht mit echter Freude am Handwerk und echtem Interesse am Menschen, für den er gedacht ist.",
   },
   {
     script: "Erfahrung",
     title: "Verwurzelt in Dorsten",
-    desc: "Ueber 25 Jahre floristisches Handwerk. In dieser Zeit haben wir tausende Straeusse gebunden, Hochzeiten begleitet und Menschen eine Freude gemacht.",
+    desc: "Über 25 Jahre floristisches Handwerk. In dieser Zeit haben wir tausende Sträusse gebunden, Hochzeiten begleitet und Menschen eine Freude gemacht.",
   },
   {
-    script: "Naehe",
-    title: "Persoenliche Beratung",
-    desc: "Wir nehmen uns Zeit fuer Sie. Kein Online-Formular ersetzt das persoenliche Gespraech, in dem wir gemeinsam den perfekten Strauss fuer Ihren Anlass finden.",
+    script: "Nähe",
+    title: "Persönliche Beratung",
+    desc: "Wir nehmen uns Zeit für Sie. Kein Online-Formular ersetzt das persönliche Gespräch, in dem wir gemeinsam den perfekten Strauss für Ihren Anlass finden.",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function UnserTeam() {
       <div className="relative overflow-hidden" style={{ minHeight: "520px" }}>
         <Image
           src="/images/blume2.jpg"
-          alt="Unser Team Floristik Koester"
+          alt="Unser Team Floristik Köster"
           fill
           priority
           className="object-cover object-center"
@@ -109,7 +109,7 @@ export default function UnserTeam() {
           <div className="rounded-2xl overflow-hidden" style={{ height: "500px", position: "relative" }}>
             <Image
               src="/images/Dorine KÃ¶ster.jpg"
-              alt="Dorine Koester"
+              alt="Dorine Köster"
               fill
               className="object-cover object-top"
             />
@@ -117,17 +117,17 @@ export default function UnserTeam() {
           <div className="flex flex-col gap-6">
             <div>
               <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "2.2rem", lineHeight: 1.2, marginBottom: "0.2rem" }}>
-                Dorine Koester
+                Dorine Köster
               </p>
               <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.45, fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
                 Inhaberin &amp; Floristmeisterin
               </p>
             </div>
             <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.7, fontSize: "1.1rem", lineHeight: 1.9 }}>
-              Mit Leidenschaft und Herzblut fuehre ich Floristik Koester. Was als kleiner Blumenladen begann, ist heute ein fester Bestandteil Dorstens geworden. Ich liebe es, fuer Menschen Freude zu schaffen, durch Farben, Duft und die Schoenheit der Natur.
+              Mit Leidenschaft und Herzblut führe ich Floristik Köster. Was als kleiner Blumenladen begann, ist heute ein fester Bestandteil Dorstens geworden. Ich liebe es, für Menschen Freude zu schaffen, durch Farben, Duft und die Schönheit der Natur.
             </p>
             <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.7, fontSize: "1.1rem", lineHeight: 1.9 }}>
-              Jeder Strauss, den wir binden, erzaehlt eine Geschichte. Ich freue mich darauf, auch Ihre Geschichte zu erzaehlen.
+              Jeder Strauss, den wir binden, erzählt eine Geschichte. Ich freue mich darauf, auch Ihre Geschichte zu erzählen.
             </p>
             <a
               href="/kontakt"
@@ -241,7 +241,7 @@ export default function UnserTeam() {
             display: "inline-block",
           }}
         >
-          Oeffnungszeiten &amp; Kontakt
+          Öffnungszeiten &amp; Kontakt
         </a>
       </div>
 

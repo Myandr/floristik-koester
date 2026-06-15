@@ -5,16 +5,16 @@ import { SiteFooter } from "../components/SiteFooter";
 const plans = [
   {
     script: "Klassisch",
-    title: "Woechentliches Abo",
+    title: "Wöchentliches Abo",
     freq: "Jede Woche",
     desc: "Jeden Montag ein frischer Saisonstrauss, zum Abholen oder auf Wunsch geliefert.",
     highlight: false,
   },
   {
     script: "Beliebt",
-    title: "Zweiwochiges Abo",
+    title: "Zweiwöchiges Abo",
     freq: "Alle 2 Wochen",
-    desc: "Der perfekte Rhythmus fuer alle, die regelmaessig Freude an frischen Blumen haben moechten.",
+    desc: "Der perfekte Rhythmus für alle, die regelmäßig Freude an frischen Blumen haben möchten.",
     highlight: true,
   },
   {
@@ -33,15 +33,15 @@ const faqs = [
   },
   {
     q: "Wo kann ich die Blumen abholen?",
-    a: "In unserem Laden an der Lippestrasse in Dorsten, waehrend der regulaeren Oeffnungszeiten.",
+    a: "In unserem Laden an der Lippestraße in Dorsten, während der regulären Öffnungszeiten.",
   },
   {
     q: "Gibt es auch Lieferung?",
     a: "Auf Anfrage liefern wir im Stadtgebiet Dorsten. Bitte sprechen Sie uns direkt an.",
   },
   {
-    q: "Kann ich bestimmte Blumen wuenschen?",
-    a: "Gerne! Wir beruecksichtigen Farbwuensche, Allergien oder besondere Vorlieben, einfach beim Beratungsgespraech mitteilen.",
+    q: "Kann ich bestimmte Blumen wünschen?",
+    a: "Gerne! Wir berücksichtigen Farbwünsche, Allergien oder besondere Vorlieben, einfach beim Beratungsgespräch mitteilen.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function BlumenAbo() {
               marginBottom: "0.4rem",
             }}
           >
-            regelmaessige Freude
+            regelmäßige Freude
           </p>
           <h1
             style={{
@@ -87,7 +87,7 @@ export default function BlumenAbo() {
               maxWidth: "620px",
             }}
           >
-            Blumen-Abo fuer Haus &amp; Familie
+            Blumen-Abo für Haus &amp; Familie
           </h1>
           <p
             style={{
@@ -100,7 +100,7 @@ export default function BlumenAbo() {
               maxWidth: "480px",
             }}
           >
-            Frische Saisonblumen regelmaessig, ohne Aufwand, immer ueberraschend, immer handgemacht. Das perfekte Geschenk an sich selbst oder an jemanden Besonderen.
+            Frische Saisonblumen regelmäßig, ohne Aufwand, immer überraschend, immer handgemacht. Das perfekte Geschenk an sich selbst oder an jemanden Besonderen.
           </p>
           <div className="flex gap-4 mt-8 flex-wrap">
             <a
@@ -151,10 +151,10 @@ export default function BlumenAbo() {
               Ihr Rhythmus
             </p>
             <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, letterSpacing: "-0.01em" }}>
-              Waehlen Sie Ihren Abo-Rhythmus
+              Wählen Sie Ihren Abo-Rhythmus
             </h2>
             <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.5, fontSize: "1rem", lineHeight: 1.8, marginTop: "0.8rem" }}>
-              Alle Preise nach persoenlicher Absprache, wir passen uns Ihrem Budget an.
+              Alle Preise nach persönlicher Absprache, wir passen uns Ihrem Budget an.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -220,10 +220,10 @@ export default function BlumenAbo() {
               Das Blumen-Abo als Geschenkidee
             </h2>
             <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.65, fontSize: "1.05rem", lineHeight: 1.85 }}>
-              Schenken Sie Freude, die immer wieder kommt, fuer Mutter, Oma, die beste Freundin oder einen lieben Menschen, dem Sie Gutes tun moechten.
+              Schenken Sie Freude, die immer wieder kommt, für Mutter, Oma, die beste Freundin oder einen lieben Menschen, dem Sie Gutes tun möchten.
             </p>
             <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.65, fontSize: "1.05rem", lineHeight: 1.85 }}>
-              Wir gestalten auf Wunsch eine persoenliche Geschenkkarte und kuemmern uns um alles Weitere.
+              Wir gestalten auf Wunsch eine persönliche Geschenkkarte und kümmern uns um alles Weitere.
             </p>
             <a
               href="https://floristik-koester.lokalerflorist.de"
@@ -262,7 +262,7 @@ export default function BlumenAbo() {
               Ihre Fragen
             </p>
             <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600 }}>
-              Haeufige Fragen
+              Häufige Fragen
             </h2>
           </div>
           <div className="flex flex-col gap-8">
@@ -283,7 +283,7 @@ export default function BlumenAbo() {
       {/* CTA */}
       <div className="px-6 md:px-10 lg:px-16 py-16 text-center" style={{ background: "#ffffff" }}>
         <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
-          bereit fuer Ihr Abo?
+          bereit für Ihr Abo?
         </p>
         <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 600, marginBottom: "2rem" }}>
           Jetzt einfach anfragen

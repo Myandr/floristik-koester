@@ -11,21 +11,21 @@ const steps = [
   {
     num: "02",
     title: "Wir binden Ihren Strauss",
-    desc: "Frisch, handgefertigt, stimmig. Wir arbeiten mit saisonalen Blumen und legen groessten Wert auf Qualitaet.",
+    desc: "Frisch, handgefertigt, stimmig. Wir arbeiten mit saisonalen Blumen und legen größten Wert auf Qualität.",
   },
   {
     num: "03",
     title: "Abholen oder liefern lassen",
-    desc: "Abholung in Dorsten jederzeit waehrend der Oeffnungszeiten. Lieferung auf Anfrage im Stadtgebiet.",
+    desc: "Abholung in Dorsten jederzeit während der Öffnungszeiten. Lieferung auf Anfrage im Stadtgebiet.",
   },
 ];
 
 const occasions = [
-  { script: "Geburtstag", title: "Geburtstagsstaerusse" },
-  { script: "Danke sagen", title: "Dankeschoen & Aufmerksamkeit" },
-  { script: "Genesung", title: "Genesungswuensche" },
-  { script: "Willkommen", title: "Willkommen & Glueckwunsch" },
-  { script: "Liebe", title: "Romantische Staerusse" },
+  { script: "Geburtstag", title: "Geburtstagssträusse" },
+  { script: "Danke sagen", title: "Dankeschön & Aufmerksamkeit" },
+  { script: "Genesung", title: "Genesungswünsche" },
+  { script: "Willkommen", title: "Willkommen & Glückwunsch" },
+  { script: "Liebe", title: "Romantische Sträusse" },
   { script: "Spontan", title: "Einfach so" },
 ];
 
@@ -58,7 +58,7 @@ export default function ExpressBlumen() {
               marginBottom: "0.4rem",
             }}
           >
-            schnell &amp; persoenlich
+            schnell &amp; persönlich
           </p>
           <h1
             style={{
@@ -160,7 +160,7 @@ export default function ExpressBlumen() {
       <div className="px-6 md:px-10 lg:px-16 py-12" style={{ background: "#ffffff" }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="rounded-2xl overflow-hidden" style={{ height: "380px", position: "relative" }}>
-            <Image src="/images/blume2.jpg" alt="Handgefertigte Staerusse" fill className="object-cover object-center" />
+            <Image src="/images/blume2.jpg" alt="Handgefertigte Sträusse" fill className="object-cover object-center" />
           </div>
           <div className="flex flex-col gap-6 py-8">
             <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "2rem", lineHeight: 1.2 }}>
@@ -170,7 +170,7 @@ export default function ExpressBlumen() {
               Jeder Strauss ist ein Unikat
             </h2>
             <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.65, fontSize: "1.05rem", lineHeight: 1.85 }}>
-              Wir verwenden ausschliesslich frische Saisonblumen, sorgfaeltig ausgewaehlt und liebevoll gebunden. Kein Massenprodukt, sondern ein persoenliches Geschenk.
+              Wir verwenden ausschließlich frische Saisonblumen, sorgfältig ausgewählt und liebevoll gebunden. Kein Massenprodukt, sondern ein persönliches Geschenk.
             </p>
             <div className="flex flex-col gap-2">
               {["Frische Saisonblumen", "Ab Lager oder Vorbestellung", "Beratung inklusive", "Preis nach Absprache"].map((item) => (
@@ -188,10 +188,10 @@ export default function ExpressBlumen() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
-              fuer jeden Anlass
+              für jeden Anlass
             </p>
             <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600 }}>
-              Wann wir fuer Sie da sind
+              Wann wir für Sie da sind
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5">

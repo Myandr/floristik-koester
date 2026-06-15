@@ -5,32 +5,32 @@ import { SiteFooter } from "../components/SiteFooter";
 const packages = [
   {
     script: "Starter",
-    title: "Woechentliche Tischdeko",
-    desc: "Ein frischer Strauss pro Woche fuer Ihren Empfang oder Besprechungsraum, stimmig zur Jahreszeit, puenktlich geliefert.",
+    title: "Wöchentliche Tischdeko",
+    desc: "Ein frischer Strauss pro Woche für Ihren Empfang oder Besprechungsraum, stimmig zur Jahreszeit, pünktlich geliefert.",
     detail: "Ab Vereinbarung",
     highlight: false,
   },
   {
     script: "Business",
     title: "Mehrere Standorte",
-    desc: "Floristik fuer Bueros, Filialen oder Unternehmensgebaeude, regelmaessig, zuverlaessig und immer frisch.",
+    desc: "Floristik für Büros, Filialen oder Unternehmensgebäude, regelmäßig, zuverlässig und immer frisch.",
     detail: "Pauschalpreis auf Anfrage",
     highlight: true,
   },
   {
     script: "Event",
     title: "Veranstaltungsfloristik",
-    desc: "Tischdekoration, Buehnendekoration, Empfangsbereich. Wir gestalten Ihr Business-Event von Anfang bis Ende.",
+    desc: "Tischdekoration, Bühnendekoration, Empfangsbereich. Wir gestalten Ihr Business-Event von Anfang bis Ende.",
     detail: "Projektbasis",
     highlight: false,
   },
 ];
 
 const benefits = [
-  { title: "Zuverlaessige Lieferung", desc: "Puenktlich zu Ihrem vereinbarten Termin, ohne Aufwand fuer Sie." },
-  { title: "Persoenliche Beratung", desc: "Wir besprechen Ihren Bedarf individuell und passen uns Ihrem Budget an." },
+  { title: "Zuverlässige Lieferung", desc: "Pünktlich zu Ihrem vereinbarten Termin, ohne Aufwand für Sie." },
+  { title: "Persönliche Beratung", desc: "Wir besprechen Ihren Bedarf individuell und passen uns Ihrem Budget an." },
   { title: "Saisonale Auswahl", desc: "Immer frische, saisonale Blumen, kein Plastikmaterial, keine Kunstblumen." },
-  { title: "Langfristige Partnerschaft", desc: "Viele unserer Geschaeftskunden arbeiten seit Jahren mit uns zusammen." },
+  { title: "Langfristige Partnerschaft", desc: "Viele unserer Geschäftskunden arbeiten seit Jahren mit uns zusammen." },
 ];
 
 export default function BusinessFlowers() {
@@ -62,7 +62,7 @@ export default function BusinessFlowers() {
               marginBottom: "0.4rem",
             }}
           >
-            fuer Ihr Unternehmen
+            für Ihr Unternehmen
           </p>
           <h1
             style={{
@@ -75,7 +75,7 @@ export default function BusinessFlowers() {
               maxWidth: "620px",
             }}
           >
-            Business Flowers fuer Unternehmen
+            Business Flowers für Unternehmen
           </h1>
           <p
             style={{
@@ -88,7 +88,7 @@ export default function BusinessFlowers() {
               maxWidth: "480px",
             }}
           >
-            Frische Blumen im Buero schaffen Atmosphaere, hinterlassen Eindruck und zeigen Wertschaetzung.
+            Frische Blumen im Büro schaffen Atmosphäre, hinterlassen Eindruck und zeigen Wertschätzung.
           </p>
           <div className="flex gap-4 mt-8 flex-wrap">
             <a
@@ -139,7 +139,7 @@ export default function BusinessFlowers() {
               unser Angebot
             </p>
             <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, letterSpacing: "-0.01em" }}>
-              Leistungen fuer Geschaeftskunden
+              Leistungen für Geschäftskunden
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -179,7 +179,7 @@ export default function BusinessFlowers() {
                 Ihre Vorteile
               </p>
               <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(2rem, 3.5vw, 2.8rem)", fontWeight: 600, lineHeight: 1.15 }}>
-                Warum Unternehmen auf Floristik Koester vertrauen
+                Warum Unternehmen auf Floristik Köster vertrauen
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

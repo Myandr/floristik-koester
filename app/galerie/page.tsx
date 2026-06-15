@@ -7,7 +7,7 @@ import { OccasionTextSection } from "../components/OccasionTextSection";
 
 const images = [
   { src: "/images/blume1.jpg", alt: "Blumenstrauss" },
-  { src: "/images/blume2.jpg", alt: "Floristik Koester" },
+  { src: "/images/blume2.jpg", alt: "Floristik Köster" },
   { src: "/images/blume3.jpg", alt: "Frische Blumen" },
   { src: "/images/blume4.jpg", alt: "Handgefertigter Strauss" },
   { src: "/images/flower1.jpeg", alt: "Blumenarrangement" },
@@ -241,7 +241,7 @@ export default function Galerie() {
       {/* CTA */}
       <div className="px-6 md:px-10 lg:px-16 py-16 text-center" style={{ background: "#ffffff" }}>
         <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
-          Gefallt Ihnen was Sie sehen?
+          Gefällt Ihnen was Sie sehen?
         </p>
         <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontWeight: 600, marginBottom: "2rem" }}>
           Bestellen Sie Ihren eigenen Strauss
