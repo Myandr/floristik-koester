@@ -2,31 +2,6 @@ import Image from "next/image";
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
 
-const values = [
-  {
-    script: "Leidenschaft",
-    title: "Floristik als Berufung",
-    desc: "Für uns sind Blumen mehr als ein Produkt. Jeder Strauss entsteht mit echter Freude am Handwerk und echtem Interesse am Menschen, für den er gedacht ist.",
-  },
-  {
-    script: "Erfahrung",
-    title: "Verwurzelt in Dorsten",
-    desc: "Über 25 Jahre floristisches Handwerk. In dieser Zeit haben wir tausende Sträusse gebunden, Hochzeiten begleitet und Menschen eine Freude gemacht.",
-  },
-  {
-    script: "Nähe",
-    title: "Persönliche Beratung",
-    desc: "Wir nehmen uns Zeit für Sie. Kein Online-Formular ersetzt das persönliche Gespräch, in dem wir gemeinsam den perfekten Strauss für Ihren Anlass finden.",
-  },
-];
-
-const facts = [
-  { value: "25+", label: "Jahre vor Ort" },
-  { value: "25+", label: "Jahre Erfahrung" },
-  { value: "5★", label: "Google-Bewertung" },
-  { value: "100%", label: "Handarbeit" },
-];
-
 export default function UnserTeam() {
   return (
     <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#ffffff" }}>
@@ -87,162 +62,98 @@ export default function UnserTeam() {
         </div>
       </div>
 
-      {/* Facts */}
-      <div style={{ background: "#ffffff" }}>
-        <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 py-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {facts.map((f) => (
-            <div key={f.label} className="text-center">
-              <p style={{ fontFamily: "var(--font-cormorant)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, lineHeight: 1 }}>
-                {f.value}
-              </p>
-              <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.5, fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", marginTop: "0.4rem" }}>
-                {f.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Dorine portrait */}
-      <div className="px-6 md:px-10 lg:px-16 py-20 md:py-28" style={{ background: "#ffffff" }}>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <div className="rounded-2xl overflow-hidden" style={{ height: "500px", position: "relative" }}>
-            <Image
-              src="/images/Dorine KÃ¶ster.jpg"
-              alt="Dorine Köster"
-              fill
-              className="object-cover object-top"
-            />
-          </div>
-          <div className="flex flex-col gap-6">
-            <div>
-              <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "2.2rem", lineHeight: 1.2, marginBottom: "0.2rem" }}>
-                Dorine Köster
-              </p>
-              <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.45, fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-                Inhaberin &amp; Floristmeisterin
-              </p>
-            </div>
-            <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.7, fontSize: "1.1rem", lineHeight: 1.9 }}>
-              Mit Leidenschaft und Herzblut führe ich Floristik Köster. Was als kleiner Blumenladen begann, ist heute ein fester Bestandteil Dorstens geworden. Ich liebe es, für Menschen Freude zu schaffen, durch Farben, Duft und die Schönheit der Natur.
-            </p>
-            <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.7, fontSize: "1.1rem", lineHeight: 1.9 }}>
-              Jeder Strauss, den wir binden, erzählt eine Geschichte. Ich freue mich darauf, auch Ihre Geschichte zu erzählen.
-            </p>
-            <a
-              href="/kontakt"
-              style={{
-                fontFamily: "var(--font-cormorant)",
-                color: "#FAF4EE",
-                background: "#1B2B7A",
-                fontSize: "0.8rem",
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                textDecoration: "none",
-                padding: "0.85rem 2rem",
-                borderRadius: "999px",
-                fontWeight: 600,
-                display: "inline-block",
-                alignSelf: "flex-start",
-                marginTop: "0.5rem",
-              }}
-            >
-              Uns besuchen
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Values */}
+      {/* Dorine Köster */}
       <div className="px-6 md:px-10 lg:px-16 py-20 md:py-28" style={{ background: "#ffffff" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
-              was uns ausmacht
-            </p>
-            <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, letterSpacing: "-0.01em" }}>
-              Unsere Werte
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((v) => (
-              <div key={v.title} className="flex flex-col gap-4 rounded-2xl p-8" style={{ background: "#ffffff" }}>
-                <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "1.8rem", lineHeight: 1.2 }}>
-                  {v.script}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+            {/* Photo */}
+            <div className="rounded-2xl overflow-hidden" style={{ height: "540px", position: "relative" }}>
+              <Image
+                src="/images/Dorine KÃ¶ster.jpg"
+                alt="Dorine Köster – Floristin mit Herz"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+
+            {/* Text */}
+            <div className="flex flex-col gap-6">
+              <div>
+                <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "2.4rem", lineHeight: 1.2, marginBottom: "0.2rem" }}>
+                  Dorine Köster
                 </p>
-                <h3 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "1.35rem", fontWeight: 600, lineHeight: 1.2 }}>
-                  {v.title}
-                </h3>
-                <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.6, fontSize: "1rem", lineHeight: 1.85 }}>
-                  {v.desc}
+                <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.45, fontSize: "0.7rem", letterSpacing: "0.22em", textTransform: "uppercase" }}>
+                  Ihre Floristin mit Herz und Leidenschaft
                 </p>
               </div>
-            ))}
+              <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.75, fontSize: "1.1rem", lineHeight: 1.95 }}>
+                Blumen sind mehr als Dekoration – sie erzählen Geschichten, drücken Gefühle aus und machen besondere Momente unvergesslich.
+              </p>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.7, fontSize: "1.1rem", lineHeight: 1.95 }}>
+                Mein Name ist Dorine Köster, und diese Liebe zur Floristik begleitet mich seit vielen Jahren. Meine Ausbildung durfte ich unter der Anleitung von drei Meisterfloristen absolvieren, die mir ihr Wissen, ihre Kreativität und ihre handwerklichen Techniken vermittelt haben. Heute setze ich diese Erfahrung mit Leidenschaft und Herzblut in meinem Laden in der Lippestraße um.
+              </p>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.7, fontSize: "1.1rem", lineHeight: 1.95 }}>
+                Für mich stehen Schönheit, Qualität und individuelle Beratung an erster Stelle. Deshalb bilde ich mich regelmäßig weiter, um Ihnen die neuesten Trends, Techniken und kreativen Ideen zu präsentieren. Ob liebevoll gestaltete Sträuße, stilvolle Dekorationen oder maßgeschneiderte florale Konzepte – ich freue mich darauf, Ihre Wünsche mit viel Hingabe Wirklichkeit werden zu lassen.
+              </p>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: "#C4545A", fontSize: "1.1rem", lineHeight: 1.95, fontStyle: "italic" }}>
+                Schauen Sie vorbei – ich freue mich darauf, Sie persönlich kennenzulernen!
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Google Review */}
+      {/* Divider */}
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16">
+        <div style={{ height: "1px", background: "linear-gradient(to right, transparent, #C4545A33, transparent)" }} />
+      </div>
+
+      {/* Blake */}
       <div className="px-6 md:px-10 lg:px-16 py-20 md:py-28" style={{ background: "#ffffff" }}>
-        <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
-          <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1.2 }}>
-            Ihre Meinung zählt
-          </p>
-          <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)", fontWeight: 600, lineHeight: 1.2 }}>
-            Wir freuen uns sehr über Ihre Google-Bewertung – teilen Sie Ihre Blumenfreude mit uns!
-          </h2>
-          <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.65, fontSize: "1.05rem", lineHeight: 1.85, maxWidth: "560px" }}>
-            Ihre Zufriedenheit liegt uns am Herzen. Wenn Sie mit unserem Service glücklich sind, freuen wir uns sehr über eine positive Google-Bewertung. Ihre Rückmeldungen helfen uns, immer besser zu werden – und geben anderen Kunden einen Eindruck von der Qualität und Leidenschaft, die in unseren Blumenarrangements steckt.
-          </p>
-          <a
-            href="https://www.google.com/maps/search/Floristik+Köster+Dorsten"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ fontFamily: "var(--font-cormorant)", color: "#FAF4EE", background: "#C4545A", fontSize: "0.85rem", letterSpacing: "0.18em", textTransform: "uppercase", textDecoration: "none", padding: "1rem 2.6rem", borderRadius: "999px", fontWeight: 700, display: "inline-block", marginTop: "0.5rem" }}
-          >
-            Jetzt auf Google bewerten
-          </a>
-          <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.35, fontSize: "0.8rem", letterSpacing: "0.1em", fontStyle: "italic" }}>
-            Danke, dass Sie uns helfen, noch besser zu werden.
-          </p>
-        </div>
-      </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+            {/* Text – links auf Desktop */}
+            <div className="flex flex-col gap-6 lg:order-1">
+              <div>
+                <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "2.4rem", lineHeight: 1.2, marginBottom: "0.2rem" }}>
+                  Blake
+                </p>
+                <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.45, fontSize: "0.7rem", letterSpacing: "0.22em", textTransform: "uppercase" }}>
+                  Chief Happiness Officer (CHO) &amp; Schnüffelprofi für frische Blumen
+                </p>
+              </div>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.75, fontSize: "1.1rem", lineHeight: 1.95 }}>
+                Besucht unseren charmanten Begleiter Blake persönlich!
+              </p>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", opacity: 0.7, fontSize: "1.1rem", lineHeight: 1.95 }}>
+                Mit seinem liebevollen Wesen und seiner entspannten Art ist Blake nicht nur unser treuer Ladenhund, sondern auch unser inoffizieller „Kuschelvorstand". Er liebt Streicheleinheiten und sorgt mit seiner fröhlichen, herzlichen Art für gute Laune bei Groß und Klein.
+              </p>
+              <p style={{ fontFamily: "var(--font-cormorant)", color: "#C4545A", fontSize: "1.1rem", lineHeight: 1.95, fontStyle: "italic" }}>
+                Kommt vorbei und lasst euch von Blakes liebenswerter Ausstrahlung verzaubern – er freut sich schon auf euch!
+              </p>
+            </div>
 
-      {/* Image strip */}
-      <div className="grid grid-cols-2 md:grid-cols-4" style={{ height: "280px" }}>
-        {["/images/blume1.jpg", "/images/blume3.jpg", "/images/picture-2600.jpeg", "/images/blume4.jpg"].map((src, i) => (
-          <div key={i} style={{ position: "relative", overflow: "hidden" }}>
-            <Image src={src} alt="" fill className="object-cover" />
+            {/* Photos – rechts auf Desktop */}
+            <div className="grid grid-cols-2 gap-4 lg:order-2">
+              <div className="rounded-2xl overflow-hidden" style={{ height: "380px", position: "relative" }}>
+                <Image
+                  src="/images/blake.png"
+                  alt="Blake – Ladenhund bei Floristik Köster"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden mt-10" style={{ height: "380px", position: "relative" }}>
+                <Image
+                  src="/images/blake2.png"
+                  alt="Blake entspannt im Blumenladen"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
-
-      {/* CTA */}
-      <div className="px-6 md:px-10 lg:px-16 py-16 text-center" style={{ background: "#ffffff" }}>
-        <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.2, marginBottom: "0.3rem" }}>
-          Kommen Sie vorbei
-        </p>
-        <h2 style={{ fontFamily: "var(--font-cormorant)", color: "#1B2B7A", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 600, marginBottom: "2rem" }}>
-          Wir freuen uns auf Sie
-        </h2>
-        <a
-          href="/kontakt"
-          style={{
-            fontFamily: "var(--font-cormorant)",
-            color: "#FAF4EE",
-            background: "#C4545A",
-            fontSize: "0.85rem",
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
-            textDecoration: "none",
-            padding: "0.9rem 2.5rem",
-            borderRadius: "999px",
-            fontWeight: 700,
-            display: "inline-block",
-          }}
-        >
-          Öffnungszeiten &amp; Kontakt
-        </a>
+        </div>
       </div>
 
       <SiteFooter />

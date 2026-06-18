@@ -10,9 +10,9 @@ const navItems = [
   { label: "Frische Blumen per Express", href: "/express-blumen" },
   { label: "Meine Blumenautomaten", href: "/blumen-automaten" },
   { label: "Business Flowers", href: "/business-flowers" },
+
   { label: "Blumen-Abo", href: "/blumen-abo" },
   { label: "Unser Team", href: "/unser-team" },
-  { label: "Unsere Partner", href: "/partner" },
   { label: "Kontakt & Öffnungszeiten", href: "/kontakt" },
 ];
 

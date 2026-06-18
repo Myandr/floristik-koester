@@ -28,8 +28,9 @@ export function HeroSection() {
       />
 
       {/* Center title */}
-      <div className="absolute z-40 inset-0 flex flex-col items-center justify-center gap-4 pointer-events-none">
+      <div className="absolute z-40 inset-0 flex flex-col items-center justify-center gap-4">
         <p
+          className="pointer-events-none"
           style={{
             fontFamily: "var(--font-great-vibes)",
             color: "#1B2B7A",
@@ -42,6 +43,7 @@ export function HeroSection() {
           <BlurTextEffect>Floristik Köster</BlurTextEffect>
         </p>
         <p
+          className="pointer-events-none"
           style={{
             fontFamily: "var(--font-cormorant)",
             color: "#1B2B7A",
@@ -54,6 +56,45 @@ export function HeroSection() {
         >
           Blumen mit Herz in Dorsten
         </p>
+        <div className="flex gap-3 flex-wrap justify-center" style={{ marginTop: "0.5rem" }}>
+          <a
+            href="/hochzeitsfloristik"
+            style={{
+              fontFamily: "var(--font-cormorant)",
+              color: "#FAF4EE",
+              background: "rgba(196,84,90,0.92)",
+              fontSize: "clamp(0.7rem, 1.1vw, 0.82rem)",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              padding: "0.75rem 1.8rem",
+              borderRadius: "999px",
+              fontWeight: 700,
+              backdropFilter: "blur(8px)",
+            }}
+          >
+            Hochzeitsfloristik
+          </a>
+          <a
+            href="/gedenkfloristik"
+            style={{
+              fontFamily: "var(--font-cormorant)",
+              color: "#000000",
+              background: "transparent",
+              border: "1.5px solid rgba(0,0,0,0.5)",
+              fontSize: "clamp(0.7rem, 1.1vw, 0.82rem)",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              padding: "0.75rem 1.8rem",
+              borderRadius: "999px",
+              fontWeight: 700,
+              backdropFilter: "blur(8px)",
+            }}
+          >
+            Gedenkfloristik
+          </a>
+        </div>
       </div>
 
       {/* Bottom-left tagline */}

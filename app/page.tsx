@@ -1,6 +1,7 @@
 "use client";
 
 import { HeroSection } from "./components/HeroSection";
+import { PartnerLogosSection } from "./components/PartnerLogosSection";
 import { AnlassSection } from "./components/AnlassSection";
 import { WhyUsSection } from "./components/WhyUsSection";
 import { ReviewsSection } from "./components/ReviewsSection";
@@ -14,6 +15,7 @@ export default function Home() {
     <main style={{ fontFamily: "var(--font-cormorant, serif)" }}>
       <SiteNav transparent />
       <HeroSection />
+      <PartnerLogosSection />
       <AnlassSection />
       <WhyUsSection />
       <ReviewsSection />
