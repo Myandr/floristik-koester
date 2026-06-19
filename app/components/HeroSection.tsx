@@ -106,9 +106,9 @@ export function HeroSection() {
           style={{
             fontFamily: "var(--font-great-vibes)",
             color: "#C4545A",
-            fontSize: "clamp(1.2rem, 3.8vw, 2.6rem)",
-            lineHeight: 1.25,
-            marginBottom: "0.45rem",
+            fontSize: "clamp(1rem, 3.2vw, 2.2rem)",
+            lineHeight: 1.2,
+            marginBottom: "0.35rem",
           }}
         >
           Blumenautomaten — 24h
