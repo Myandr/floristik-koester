@@ -31,7 +31,15 @@ const liefergebiete = [
 
 export default function BusinessFlowers() {
   return (
-    <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#FAF4EE" }}>
+    <main
+      style={{
+        fontFamily: "var(--font-cormorant, serif)",
+        minHeight: "100svh",
+        background: "#FAF4EE",
+        overflowX: "hidden",
+        paddingTop: "76px",
+      }}
+    >
       <SiteNav />
 
       {/* Hero */}

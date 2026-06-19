@@ -51,7 +51,15 @@ const sections = [
 
 export default function Datenschutz() {
   return (
-    <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#ffffff" }}>
+    <main
+      style={{
+        fontFamily: "var(--font-cormorant, serif)",
+        minHeight: "100svh",
+        background: "#ffffff",
+        overflowX: "hidden",
+        paddingTop: "76px",
+      }}
+    >
       <SubPageNav />
 
       <div

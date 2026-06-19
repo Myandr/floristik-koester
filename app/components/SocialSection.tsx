@@ -92,14 +92,14 @@ export function SocialSection() {
           </div>
 
           {/* Social links */}
-          <div className="flex flex-col gap-6">
+          <div className="flex w-full flex-col gap-6">
             {socials.map((s) => (
               <a
                 key={s.name}
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-6 transition-opacity hover:opacity-75"
+                className="group flex flex-col items-start gap-2 transition-opacity hover:opacity-75 sm:flex-row sm:items-center sm:gap-6"
                 style={{ textDecoration: "none" }}
               >
                 <span
@@ -116,10 +116,10 @@ export function SocialSection() {
                   style={{
                     fontFamily: "var(--font-cormorant)",
                     color: "#1B2B7A",
-                    fontSize: "clamp(1.9rem, 3vw, 2.5rem)",
+                    fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
                     fontWeight: 600,
                     lineHeight: 1,
-                    minWidth: "150px",
+                    minWidth: 0,
                   }}
                 >
                   {s.name}
@@ -128,7 +128,7 @@ export function SocialSection() {
                   style={{
                     fontFamily: "var(--font-great-vibes)",
                     color: "#C4545A",
-                    fontSize: "1.7rem",
+                    fontSize: "clamp(1.1rem, 3vw, 1.7rem)",
                     lineHeight: 1,
                   }}
                 >

@@ -15,6 +15,7 @@ html {
 body {
   background: #FAF4EE;
   color: #1B2B7A;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

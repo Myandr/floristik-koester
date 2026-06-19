@@ -26,7 +26,15 @@ export default function Galerie() {
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   return (
-    <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#ffffff" }}>
+    <main
+      style={{
+        fontFamily: "var(--font-cormorant, serif)",
+        minHeight: "100svh",
+        background: "#ffffff",
+        overflowX: "hidden",
+        paddingTop: "76px",
+      }}
+    >
       <SiteNav />
 
       {/* Hero */}

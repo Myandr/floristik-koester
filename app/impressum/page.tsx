@@ -24,7 +24,15 @@ export default function Impressum() {
   };
 
   return (
-    <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#F9DDE2" }}>
+    <main
+      style={{
+        fontFamily: "var(--font-cormorant, serif)",
+        minHeight: "100svh",
+        background: "#F9DDE2",
+        overflowX: "hidden",
+        paddingTop: "76px",
+      }}
+    >
 
       {/* Nav */}
       <nav

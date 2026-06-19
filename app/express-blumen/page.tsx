@@ -37,7 +37,15 @@ const liefergebiete = [
 
 export default function ExpressBlumen() {
   return (
-    <main style={{ fontFamily: "var(--font-cormorant, serif)", minHeight: "100svh", background: "#ffffff" }}>
+    <main
+      style={{
+        fontFamily: "var(--font-cormorant, serif)",
+        minHeight: "100svh",
+        background: "#ffffff",
+        overflowX: "hidden",
+        paddingTop: "76px",
+      }}
+    >
       <SiteNav />
 
       {/* Hero */}

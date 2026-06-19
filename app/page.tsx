@@ -12,7 +12,7 @@ import { SiteNav } from "./components/SiteNav";
 
 export default function Home() {
   return (
-    <main style={{ fontFamily: "var(--font-cormorant, serif)" }}>
+    <main style={{ fontFamily: "var(--font-cormorant, serif)", overflowX: "hidden" }}>
       <SiteNav transparent />
       <HeroSection />
       <PartnerLogosSection />

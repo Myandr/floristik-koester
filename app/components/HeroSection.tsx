@@ -28,16 +28,17 @@ export function HeroSection() {
       />
 
       {/* Center title */}
-      <div className="absolute z-40 inset-0 flex flex-col items-center justify-center gap-4">
+      <div className="absolute z-40 inset-0 flex flex-col items-center justify-center gap-2.5 px-3 sm:px-6 text-center">
         <p
           className="pointer-events-none"
           style={{
             fontFamily: "var(--font-great-vibes)",
             color: "#1B2B7A",
-            fontSize: "clamp(4.5rem, 12vw, 10rem)",
-            lineHeight: 1.15,
+            fontSize: "clamp(3.2rem, 7.8vw, 10rem)",
+            lineHeight: 0.95,
             textAlign: "center",
             textShadow: "0 2px 32px rgba(250,244,238,0.5)",
+            maxWidth: "100%",
           }}
         >
           <BlurTextEffect>Floristik Köster</BlurTextEffect>
@@ -47,27 +48,29 @@ export function HeroSection() {
           style={{
             fontFamily: "var(--font-cormorant)",
             color: "#1B2B7A",
-            fontSize: "clamp(1rem, 2vw, 1.5rem)",
-            letterSpacing: "0.32em",
+            fontSize: "clamp(0.72rem, 2.4vw, 1.5rem)",
+            letterSpacing: "0.16em",
             textTransform: "uppercase",
             textAlign: "center",
             opacity: 0.65,
+            maxWidth: "520px",
+            padding: "0 0.35rem",
           }}
         >
           Blumen mit Herz in Dorsten
         </p>
-        <div className="flex gap-3 flex-wrap justify-center" style={{ marginTop: "0.5rem" }}>
+        <div className="flex gap-2 flex-wrap justify-center" style={{ marginTop: "0.15rem" }}>
           <a
             href="/hochzeitsfloristik"
             style={{
               fontFamily: "var(--font-cormorant)",
               color: "#FAF4EE",
               background: "rgba(196,84,90,0.92)",
-              fontSize: "clamp(0.7rem, 1.1vw, 0.82rem)",
-              letterSpacing: "0.2em",
+              fontSize: "clamp(0.58rem, 1.8vw, 0.82rem)",
+              letterSpacing: "0.14em",
               textTransform: "uppercase",
               textDecoration: "none",
-              padding: "0.75rem 1.8rem",
+              padding: "0.58rem 0.95rem",
               borderRadius: "999px",
               fontWeight: 700,
               backdropFilter: "blur(8px)",
@@ -82,11 +85,11 @@ export function HeroSection() {
               color: "#000000",
               background: "transparent",
               border: "1.5px solid rgba(0,0,0,0.5)",
-              fontSize: "clamp(0.7rem, 1.1vw, 0.82rem)",
-              letterSpacing: "0.2em",
+              fontSize: "clamp(0.58rem, 1.8vw, 0.82rem)",
+              letterSpacing: "0.14em",
               textTransform: "uppercase",
               textDecoration: "none",
-              padding: "0.75rem 1.8rem",
+              padding: "0.58rem 0.95rem",
               borderRadius: "999px",
               fontWeight: 700,
               backdropFilter: "blur(8px)",
@@ -99,16 +102,16 @@ export function HeroSection() {
 
       {/* Bottom-left tagline */}
       <div
-        className="absolute z-40 max-w-[240px] sm:max-w-[280px]"
-        style={{ bottom: "7%", left: "clamp(1.5rem, 4vw, 2.5rem)" }}
+        className="absolute z-40 max-w-[170px] sm:max-w-[280px]"
+        style={{ bottom: "6%", left: "clamp(0.9rem, 3vw, 1.5rem)" }}
       >
         <p
           style={{
             fontFamily: "var(--font-great-vibes)",
             color: "#C4545A",
-            fontSize: "clamp(1rem, 3.2vw, 2.2rem)",
-            lineHeight: 1.2,
-            marginBottom: "0.35rem",
+            fontSize: "clamp(1.1rem, 3.8vw, 2.45rem)",
+            lineHeight: 1.15,
+            marginBottom: "0.25rem",
           }}
         >
           Blumenautomaten — 24h
@@ -119,16 +122,16 @@ export function HeroSection() {
           style={{
             fontFamily: "var(--font-cormorant)",
             color: "#1B2B7A",
-            fontSize: "1rem",
-            letterSpacing: "0.18em",
+            fontSize: "clamp(0.72rem, 1.6vw, 1rem)",
+            letterSpacing: "0.12em",
             textTransform: "uppercase",
             textDecoration: "none",
             opacity: 0.55,
-            marginTop: "0.75rem",
+            marginTop: "0.5rem",
             display: "inline-flex",
           }}
         >
-          <span style={{ color: "#C4545A", fontSize: "0.55rem" }}>●</span>
+          <span style={{ color: "#C4545A", fontSize: "0.48rem" }}>●</span>
           Jetzt Standorte entdecken
         </a>
       </div>
@@ -140,10 +143,10 @@ export function HeroSection() {
         rel="noopener noreferrer"
         className="absolute z-40 flex items-center justify-center text-center"
         style={{
-          bottom: "5%",
-          right: "clamp(1.5rem, 4vw, 2.5rem)",
-          width: "clamp(120px, 18vw, 210px)",
-          height: "clamp(120px, 18vw, 210px)",
+          bottom: "1rem",
+          right: "clamp(0.75rem, 3vw, 1.5rem)",
+          width: "clamp(92px, 18vw, 210px)",
+          height: "clamp(92px, 18vw, 210px)",
           borderRadius: "62% 38% 54% 46% / 44% 58% 42% 56%",
           background: "#C4545A",
           color: "#FAF4EE",
@@ -154,12 +157,12 @@ export function HeroSection() {
         <span
           style={{
             fontFamily: "var(--font-cormorant)",
-            fontSize: "clamp(0.85rem, 1.3vw, 1.1rem)",
-            letterSpacing: "0.18em",
+            fontSize: "clamp(0.72rem, 2vw, 1.1rem)",
+            letterSpacing: "0.12em",
             textTransform: "uppercase",
-            lineHeight: 1.65,
+            lineHeight: 1.5,
             display: "block",
-            padding: "0 18px",
+            padding: "0 10px",
             animation: "hero-btn-spin-reverse 9s linear infinite",
           }}
         >
