@@ -114,7 +114,7 @@ export function AnlassSection() {
                 { script: "Tischdeko", title: "Event- & Tischdekoration" },
                 { script: "Flowers", title: "Business Flowers" },
                 { script: "für Zuhause", title: "Blumen-Abos" },
-                { script: "& Geschenkideen", title: "Pflanzen & Geschenkideen" },
+                { script: "Geschenkideen", title: "Pflanzen & Geschenkideen" },
               ].map((item) => (
                 <div key={item.title} className="flex flex-col gap-2">
                   <p style={{ fontFamily: "var(--font-great-vibes)", color: "#C4545A", fontSize: "2.2rem", lineHeight: 1.1 }}>{item.script}</p>
