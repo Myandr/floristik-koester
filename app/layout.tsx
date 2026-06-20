@@ -118,7 +118,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="overflow-x-hidden bg-white">
+      <body className="bg-white">
         {children}
         <CookieBanner />
       </body>

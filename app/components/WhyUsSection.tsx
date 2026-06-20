@@ -33,19 +33,12 @@ export function WhyUsSection() {
     <section id="ueber-uns" className="px-6 md:px-10 lg:px-16 py-24 md:py-32" style={{ background: "#ffffff" }}>
       <div className="max-w-6xl mx-auto">
         <div
-          className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-16 md:gap-20"
+          className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-12 md:gap-20"
           style={{ alignItems: "start" }}
         >
 
           {/* Left — auf Desktop sticky, auf Mobile normal im Fluss */}
-          <div
-            className="flex flex-col gap-8"
-            style={{
-              position: "sticky",
-              top: "7rem",
-              alignSelf: "start",
-            }}
-          >
+          <div className="why-left flex flex-col gap-8">
             <div>
               <p
                 className="text-[2.2rem] md:text-[2.6rem] lg:text-[3.2rem]"
@@ -73,13 +66,13 @@ export function WhyUsSection() {
             </div>
 
             <p
+              className="why-text"
               style={{
                 fontFamily: "var(--font-cormorant)",
                 color: "#1B2B7A",
                 opacity: 0.55,
                 fontSize: "1.05rem",
                 lineHeight: 1.8,
-                maxWidth: "380px",
               }}
             >
               Sie haben wenig Zeit oder möchten Blumen vorbestellen? Schreiben Sie uns einfach per WhatsApp oder rufen Sie an — wir kümmern uns schnell und zuverlässig. Wir liefern Blumen auch innerhalb von Dorsten nach Absprache aus.
@@ -167,6 +160,23 @@ export function WhyUsSection() {
 
         </div>
       </div>
+
+      <style jsx>{`
+        .why-text {
+          max-width: 100%;
+        }
+        /* Sticky + max-width erst ab Desktop (md = 768px) */
+        @media (min-width: 768px) {
+          .why-left {
+            position: sticky;
+            top: 7rem;
+            align-self: start;
+          }
+          .why-text {
+            max-width: 380px;
+          }
+        }
+      `}</style>
     </section>
   );
 }
