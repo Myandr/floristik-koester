@@ -5,9 +5,9 @@ import { useState } from "react";
 type Status = "idle" | "loading" | "success" | "error";
 
 const hours = [
-  { day: "Mo – Fr", time: "09:00 – 18:00" },
-  { day: "Samstag", time: "09:00 – 14:00" },
-  { day: "Sonntag", time: "Geschlossen" },
+  { day: "Mo – Fr", time: "09:30 – 18:00" },
+  { day: "Samstag", time: "09:30 – 14:00" },
+  { day: "Sonntag", time: "Blumenanlieferungen" },
 ];
 
 function PhoneIcon() {

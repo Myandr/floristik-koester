@@ -32,16 +32,26 @@ export function WhyUsSection() {
   return (
     <section id="ueber-uns" className="px-6 md:px-10 lg:px-16 py-24 md:py-32" style={{ background: "#ffffff" }}>
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-16 md:gap-20 items-start">
+        <div
+          className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-16 md:gap-20"
+          style={{ alignItems: "start" }}
+        >
 
-          {/* Left — sticky headline */}
-          <div className="md:sticky md:top-28 md:self-start flex flex-col gap-8">
+          {/* Left — auf Desktop sticky, auf Mobile normal im Fluss */}
+          <div
+            className="flex flex-col gap-8"
+            style={{
+              position: "sticky",
+              top: "7rem",
+              alignSelf: "start",
+            }}
+          >
             <div>
               <p
+                className="text-[2.2rem] md:text-[2.6rem] lg:text-[3.2rem]"
                 style={{
                   fontFamily: "var(--font-great-vibes)",
                   color: "#C4545A",
-                  fontSize: "clamp(2.2rem, 4vw, 3.2rem)",
                   lineHeight: 1.2,
                   marginBottom: "0.3rem",
                 }}
@@ -49,10 +59,10 @@ export function WhyUsSection() {
                 Besuchen Sie uns
               </p>
               <h2
+                className="text-[2.4rem] md:text-[3rem] lg:text-[4rem]"
                 style={{
                   fontFamily: "var(--font-cormorant)",
                   color: "#1B2B7A",
-                  fontSize: "clamp(2.6rem, 5vw, 4rem)",
                   fontWeight: 600,
                   letterSpacing: "-0.01em",
                   lineHeight: 1.08,
@@ -97,7 +107,7 @@ export function WhyUsSection() {
             </a>
           </div>
 
-          {/* Right — cards */}
+          {/* Right — Cards, auf Mobile untereinander, auf Desktop scrollt man daran vorbei */}
           <div className="flex flex-col gap-10">
             {cards.map((card) => (
               <a
@@ -109,8 +119,7 @@ export function WhyUsSection() {
                 style={{ textDecoration: "none" }}
               >
                 <div
-                  className="rounded-2xl overflow-hidden"
-                  style={{ height: "clamp(220px, 30vw, 380px)", position: "relative" }}
+                  className="rounded-2xl overflow-hidden relative h-[240px] sm:h-[300px] md:h-[320px] lg:h-[380px]"
                 >
                   <Image
                     src={card.image}
@@ -133,14 +142,18 @@ export function WhyUsSection() {
                     }}
                   >
                     {card.tag}
-                    <span style={{ color: "#C4545A", fontSize: "0.55rem" }}>●</span>
-                    {card.detail}
+                    {card.detail && (
+                      <>
+                        <span style={{ color: "#C4545A", fontSize: "0.55rem" }}>●</span>
+                        {card.detail}
+                      </>
+                    )}
                   </p>
                   <h3
+                    className="text-[1.5rem] md:text-[1.7rem] lg:text-[1.9rem]"
                     style={{
                       fontFamily: "var(--font-cormorant)",
                       color: "#1B2B7A",
-                      fontSize: "clamp(1.4rem, 2.4vw, 1.9rem)",
                       fontWeight: 600,
                       lineHeight: 1.2,
                     }}
