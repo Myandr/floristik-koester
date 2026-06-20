@@ -115,7 +115,7 @@ export function HeroSection() {
         </p>
         <a
           href="/blumen-automaten"
-          className="hidden sm:inline-flex items-center gap-2 text-[0.72rem] md:text-[0.85rem] lg:text-[1rem]"
+          className="inline-flex items-center gap-2 text-[0.62rem] sm:text-[0.72rem] md:text-[0.85rem] lg:text-[1rem]"
           style={{
             fontFamily: "var(--font-cormorant)",
             color: "#1B2B7A",
@@ -136,12 +136,10 @@ export function HeroSection() {
         href="https://floristik-koester.lokalerflorist.de"
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute z-40 flex items-center justify-center text-center"
+        className="absolute z-40 flex items-center justify-center text-center w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[170px] md:h-[170px] lg:w-[210px] lg:h-[210px]"
         style={{
           bottom: "1rem",
           right: "clamp(0.75rem, 3vw, 1.5rem)",
-          width: "clamp(92px, 18vw, 210px)",
-          height: "clamp(92px, 18vw, 210px)",
           borderRadius: "62% 38% 54% 46% / 44% 58% 42% 56%",
           background: "#C4545A",
           color: "#FAF4EE",
@@ -150,7 +148,7 @@ export function HeroSection() {
         }}
       >
         <span
-          className="text-[0.72rem] sm:text-[0.85rem] md:text-[1rem] lg:text-[1.1rem]"
+          className="text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.1rem]"
           style={{
             fontFamily: "var(--font-cormorant)",
             letterSpacing: "0.12em",
