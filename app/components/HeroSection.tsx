@@ -30,25 +30,22 @@ export function HeroSection() {
       {/* Center title */}
       <div className="absolute z-40 inset-0 flex flex-col items-center justify-center gap-2.5 px-3 sm:px-6 text-center">
         <p
-          className="pointer-events-none"
+          className="pointer-events-none w-full text-[3.2rem] sm:text-[5rem] md:text-[7rem] lg:text-[9rem] xl:text-[11rem] 2xl:text-[13rem]"
           style={{
             fontFamily: "var(--font-great-vibes)",
             color: "#1B2B7A",
-            fontSize: "clamp(4rem, 10vw, 14rem)",
             lineHeight: 0.95,
             textAlign: "center",
             textShadow: "0 2px 32px rgba(250,244,238,0.5)",
-            maxWidth: "100%",
           }}
         >
           <BlurTextEffect>Floristik Köster</BlurTextEffect>
         </p>
         <p
-          className="pointer-events-none"
+          className="pointer-events-none text-[0.72rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.5rem]"
           style={{
             fontFamily: "var(--font-cormorant)",
             color: "#1B2B7A",
-            fontSize: "clamp(0.72rem, 2.4vw, 1.5rem)",
             letterSpacing: "0.16em",
             textTransform: "uppercase",
             textAlign: "center",
@@ -66,7 +63,6 @@ export function HeroSection() {
               fontFamily: "var(--font-cormorant)",
               color: "#FAF4EE",
               background: "rgba(196,84,90,0.92)",
-              fontSize: "clamp(0.58rem, 1.8vw, 0.82rem)",
               letterSpacing: "0.14em",
               textTransform: "uppercase",
               textDecoration: "none",
@@ -75,6 +71,7 @@ export function HeroSection() {
               fontWeight: 700,
               backdropFilter: "blur(8px)",
             }}
+            className="text-[0.65rem] sm:text-[0.72rem] md:text-[0.82rem]"
           >
             Hochzeitsfloristik
           </a>
@@ -85,7 +82,6 @@ export function HeroSection() {
               color: "#000000",
               background: "transparent",
               border: "1.5px solid rgba(0,0,0,0.5)",
-              fontSize: "clamp(0.58rem, 1.8vw, 0.82rem)",
               letterSpacing: "0.14em",
               textTransform: "uppercase",
               textDecoration: "none",
@@ -94,6 +90,7 @@ export function HeroSection() {
               fontWeight: 700,
               backdropFilter: "blur(8px)",
             }}
+            className="text-[0.65rem] sm:text-[0.72rem] md:text-[0.82rem]"
           >
             Gedenkfloristik
           </a>
@@ -106,29 +103,27 @@ export function HeroSection() {
         style={{ bottom: "6%", left: "clamp(0.9rem, 3vw, 1.5rem)" }}
       >
         <p
+          className="text-[1.1rem] sm:text-[1.6rem] md:text-[2rem] lg:text-[2.45rem]"
           style={{
             fontFamily: "var(--font-great-vibes)",
             color: "#C4545A",
-            fontSize: "clamp(1.1rem, 3.8vw, 2.45rem)",
             lineHeight: 1.15,
             marginBottom: "0.25rem",
           }}
         >
           Blumenautomaten — 24h
         </p>
-<a
+        <a
           href="/blumen-automaten"
-          className="hidden sm:inline-flex items-center gap-2"
+          className="hidden sm:inline-flex items-center gap-2 text-[0.72rem] md:text-[0.85rem] lg:text-[1rem]"
           style={{
             fontFamily: "var(--font-cormorant)",
             color: "#1B2B7A",
-            fontSize: "clamp(0.72rem, 1.6vw, 1rem)",
             letterSpacing: "0.12em",
             textTransform: "uppercase",
             textDecoration: "none",
             opacity: 0.55,
             marginTop: "0.5rem",
-            display: "inline-flex",
           }}
         >
           <span style={{ color: "#C4545A", fontSize: "0.48rem" }}>●</span>
@@ -155,9 +150,9 @@ export function HeroSection() {
         }}
       >
         <span
+          className="text-[0.72rem] sm:text-[0.85rem] md:text-[1rem] lg:text-[1.1rem]"
           style={{
             fontFamily: "var(--font-cormorant)",
-            fontSize: "clamp(0.72rem, 2vw, 1.1rem)",
             letterSpacing: "0.12em",
             textTransform: "uppercase",
             lineHeight: 1.5,
