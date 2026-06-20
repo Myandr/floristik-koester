@@ -34,7 +34,6 @@ export function WhyUsSection() {
       <div className="max-w-6xl mx-auto">
         <div
           className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-16 md:gap-20"
-          style={{ alignItems: "start" }}
         >
 
           {/* Left — auf Desktop sticky, auf Mobile normal im Fluss */}
