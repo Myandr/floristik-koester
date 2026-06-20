@@ -34,7 +34,7 @@ export function HeroSection() {
           style={{
             fontFamily: "var(--font-great-vibes)",
             color: "#1B2B7A",
-            fontSize: "clamp(3.2rem, 7.8vw, 10rem)",
+            fontSize: "clamp(4rem, 10vw, 14rem)",
             lineHeight: 0.95,
             textAlign: "center",
             textShadow: "0 2px 32px rgba(250,244,238,0.5)",
