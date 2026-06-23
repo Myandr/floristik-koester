@@ -12,14 +12,14 @@ const images = [
   { src: "/images/blume4.jpg", alt: "Handgefertigter Strauss" },
   { src: "/images/flower1.jpeg", alt: "Blumenarrangement" },
   { src: "/images/flower3.jpeg", alt: "Hochzeitsfloristik" },
-  { src: "/images/picture-2600.jpeg", alt: "Kreatives Arrangement" },
-  { src: "/images/picture-2600-2.jpeg", alt: "Saisonblumen" },
+  { src: "/images/gedenken.png", alt: "Kreatives Arrangement" },
+  { src: "/images/hochzeit6.png", alt: "Saisonblumen" },
   { src: "/images/picture-2600-3.jpeg", alt: "Werkstuck" },
-  { src: "/images/picture-2600-4.jpeg", alt: "Tischdekoration" },
-  { src: "/images/picture-2600-5.jpeg", alt: "Blumengruss" },
-  { src: "/images/IMG_20240806_140551.jpg", alt: "Floristik Atelier" },
-  { src: "/images/IMG_20240807_125230.jpg", alt: "Frische Saisonblumen" },
-  { src: "/images/IMG_20240220_120016_879.jpg", alt: "Handarbeit" },
+  { src: "/images/hochzeit.png", alt: "Tischdekoration" },
+  { src: "/images/hochzeit2.png", alt: "Blumengruss" },
+  { src: "/images/hochzeit3.png", alt: "Floristik Atelier" },
+  { src: "/images/gedenken2.png", alt: "Frische Saisonblumen" },
+  { src: "/images/gedenken3.png", alt: "Handarbeit" },
 ];
 
 export default function Galerie() {

@@ -45,7 +45,7 @@ export default function BusinessFlowers() {
       {/* Hero */}
       <div className="relative overflow-hidden" style={{ minHeight: "520px" }}>
         <Image
-          src="/images/blume4.jpg"
+          src="/images/flower3.jpeg"
           alt="Business Flowers für Unternehmen – Floristik Köster Dorsten"
           fill
           priority

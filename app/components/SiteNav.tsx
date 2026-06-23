@@ -10,7 +10,6 @@ const navItems = [
   { label: "Frische Blumen per Express", href: "/express-blumen" },
   { label: "Meine Blumenautomaten", href: "/blumen-automaten" },
   { label: "Business Flowers", href: "/business-flowers" },
-
   { label: "Blumen-Abo", href: "/blumen-abo" },
   { label: "Unser Team", href: "/unser-team" },
   { label: "Kontakt & Öffnungszeiten", href: "/kontakt" },
@@ -75,8 +74,18 @@ export function SiteNav({ transparent = false }: { transparent?: boolean }) {
           </span>
         </button>
 
-        {/* Logo */}
-        <a href="/" className="absolute left-1/2 -translate-x-1/2 text-center" style={{ textDecoration: "none" }}>
+        {/* Logo — erscheint erst beim Scrollen */}
+        <a
+          href="/"
+          className="absolute left-1/2 -translate-x-1/2 text-center"
+          style={{
+            textDecoration: "none",
+            opacity: solidBg ? 1 : 0,
+            transform: solidBg ? "translateY(0)" : "translateY(-6px)",
+            transition: "opacity 0.35s ease, transform 0.35s ease",
+            pointerEvents: solidBg ? "auto" : "none",
+          }}
+        >
           <p className="text-[9px] tracking-[0.55em] uppercase" style={{ color: "#C4545A" }}>Floristik</p>
           <p
             className="text-xl md:text-2xl tracking-[0.42em] uppercase font-semibold leading-none"
